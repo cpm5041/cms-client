@@ -29,9 +29,9 @@ const onSignOut = function (event) {
 }
 
 const onChangePassword = function (event) {
+  console.log('change pass click is heard')
   event.preventDefault()
-
-  const data = getFormFields(this)
+  const data = getFormFields(event.target)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
@@ -40,7 +40,7 @@ const addAuthHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('click', onSignOut)
-  $('#change-password').on('submit', onChangePassword)
+  $('#change-password-modal').on('submit', onChangePassword)
   // $('#sign-in-modal-btn').on('click', function () {
   //   $('.auth-status').hide()
   // })
