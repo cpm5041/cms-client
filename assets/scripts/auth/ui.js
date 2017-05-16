@@ -28,6 +28,7 @@ const signUpFailure = (error) => {
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password-confirmation').val('')
+  $('#sign-up-error').text('You may have entered invalid credentials, please try again.')
   // $('#sign-up-status').show()
 }
 
@@ -46,6 +47,7 @@ const signInFailure = (error) => {
   console.log('sign in fail')
   $('#sign-in-email').val('')
   $('#sign-in-password').val('')
+  $('#sign-in-error').text('You may have entered invalid credentials, please try again.')
   console.log(error)
   // $('#sign-in-status').show()
 }
@@ -76,6 +78,7 @@ const changePasswordSuccess = (data) => {
 
 const changePasswordFailure = (error) => {
   console.log('change pass fail')
+  $('#change-password-failure').text('You may have an invalid password, please try again.')
   console.log(error)
 }
 
