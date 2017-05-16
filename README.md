@@ -23,7 +23,7 @@ FILL IN WITH AN ABOUT OUR APPLICATION
 1. As a user I want to be able to view my pages.
 
 ## ERD
-![insert ERD](styles/erd.PNG?raw=true)
+![insert ERD](assets/styles/erd.PNG?raw=true)
 
 
 ## [License](LICENSE)
