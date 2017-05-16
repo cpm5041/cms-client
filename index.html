@@ -86,7 +86,6 @@
 
         <!-- Sign-in Modal Body -->
         <div class="modal-body">
-
           <form id="sign-in" role="form">
             <div class="form-group">
               <label for="sign-in-email">Email address</label>
@@ -99,7 +98,7 @@
             <!-- <button type="submit" class="btn btn-default">Submit</button> -->
             <input type="submit" class="btn btn-default" value="Sign-in" name="submit">
             <div id="sign-in-status" class="auth-status">
-              <span><p>Sign-in error, try again!</p></span>
+              <p id="sign-in-error"></p>
             </div>
           </form>
         </div>
@@ -150,7 +149,7 @@
         <!-- <button type="submit" class="btn btn-default">Submit</button> -->
         <input type="submit" class="btn btn-default" name="submit" value="Create Account">
         <div id="sign-up-status" class="auth-status">
-          <span><p>Sign-up error, try again!</p></span>
+          <p id="sign-up-error"></p>
         </div>
         </form>
       </div>
@@ -181,17 +180,17 @@
             <div class="form-group">
             </div>
             <div class="form-group">
-              <label for="change-password-password">Password</label>
+              <label for="change-password-password">Old Password</label>
               <input type="password" class="form-control" name="passwords[old]" id="old-password" placeholder="Old Password" />
             </div>
             <div class="form-group">
-              <label for="change-password-password-confirmation">Password</label>
+              <label for="change-password-password-confirmation">New Password</label>
               <input type="password" class="form-control" name="passwords[new]" id="new-password" placeholder="New Password" />
             </div>
             <!-- <button type="submit" class="btn btn-default">Submit</button> -->
             <input type="submit" class="btn btn-default" name="submit" value="Change Password">
             <div id="change-password-status" class="auth-status">
-              <span><p>Change password error, try again!</p></span>
+              <p id="change-password-failure"></p>
             </div>
           </form>
         </div>
