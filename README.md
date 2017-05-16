@@ -5,6 +5,7 @@
 FILL IN WITH AN ABOUT OUR APPLICATION
 
 ## Planning
+
 # Stories
 1. As a user I want to be able to sign-up for the application.
 1. As a user I want to be able to sign-in so I can use the application.
@@ -22,8 +23,7 @@ FILL IN WITH AN ABOUT OUR APPLICATION
 1. As a user I want to be able to view my pages.
 
 # ERD
-
-
+![insert ERD](styles/erd.PNG)
 
 
 ## [License](LICENSE)
