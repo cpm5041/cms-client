@@ -6,7 +6,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onSignUp = function (event) {
-  const data = getFormFields(this) // 'this' is reffering to event.target
+  const data = getFormFields(event.target) // 'this' is reffering to event.target
   event.preventDefault()
   api.signUp(data)
     .then(ui.signUpSuccess)
@@ -15,7 +15,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  const data = getFormFields(this) // 'this' is reffering to event.target
+  const data = getFormFields(event.target) // 'this' is reffering to event.target
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
