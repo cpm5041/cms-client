@@ -4,9 +4,9 @@
 
 FILL IN WITH AN ABOUT OUR APPLICATION
 
-## Planning
+# Planning
 
-# Stories
+## Stories
 1. As a user I want to be able to sign-up for the application.
 1. As a user I want to be able to sign-in so I can use the application.
 1. As a user I want to be able to change my password so I can update my credentials if needed.
@@ -22,8 +22,8 @@ FILL IN WITH AN ABOUT OUR APPLICATION
 1. As a user I want to be able to delete my pages.
 1. As a user I want to be able to view my pages.
 
-# ERD
-![insert ERD](styles/erd.PNG)
+## ERD
+![insert ERD](styles/erd.PNG?raw=true)
 
 
 ## [License](LICENSE)
