@@ -37,6 +37,7 @@ const onUpdateCurrentUserBlogs = function (event) {
     .catch(ui.updateCurrentUserBlogsFail)
     .done(onGetCurrentUserBlogs)
 }
+
 const onDeleteCurrentUserBlogs = function () {
   event.preventDefault()
   console.log('remove current user blogs click is heard')
@@ -46,6 +47,7 @@ const onDeleteCurrentUserBlogs = function () {
     .catch(ui.deleteCurrentUserBlogsFail)
     .done(onGetCurrentUserBlogs)
 }
+
 const addBlogHandlers = () => {
   $('#blogCreateForm').on('submit', onCreateBlog)
   $('#showBlogButton').on('click', onGetBlogs)

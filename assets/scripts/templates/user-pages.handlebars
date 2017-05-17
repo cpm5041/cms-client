@@ -1,0 +1,66 @@
+{{#each pages as |page|}}
+
+  <!-- Don't uncomment yet -->
+
+  <h1 class ="text-center" data-id="{{page.id}}"> <small>{{page.title}}</small></h1>
+  <div class="text-center">
+    {{#if page.title}}
+      <ul class="list-unstyled"><li data-id="{{page.id}}">Title: {{page.title}}</li>
+        <li data-id="{{page.id}}">Body: {{page.body}}</li>
+        <li data-id="{{page.id}}">Footer: {{page.footer}}</li>
+        <li>
+          <button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updatepagemodal{{page.id}}">Update Page</button>
+          <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removepagemodal{{page.id}}">Remove Page</button>
+        </li>
+      </ul>
+      <div class="modal fade" id="updatepagemodal{{page.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Update Page</h5>
+            </div>
+            <div class="modal-body">
+            <form class="update-page" data-id="{{page.id}}">
+              <fieldset>
+                <input type='text' name='page[title]' id ='updateTitle' placeholder="Updated Description">
+                <input type='text' name='page[body]' id ='updateBody' placeholder="Updated Category">
+                <input type='text' name='page[footer]' id ='updateFooter' placeholder="Updated Footer">
+                <input data-id="{{page.id}}" type="submit" name="submit" value="Update Page">
+            </fieldset>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <div class="updateerror"></div>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="removepagemodal{{page.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Are you sure you want to remove item?</h5>
+            </div>
+            <div class="modal-body">
+              <form class="remove-page" data-id="{{page.id}}">
+                <fieldset>
+                  <legend>{{page.title}}</legend>
+                  <input type="submit" name="submit" value="Remove Page">
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div class="passworderror"></div>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {{else}}
+      No blogs.
+    {{/if}}
+  </div>
+{{/each}}

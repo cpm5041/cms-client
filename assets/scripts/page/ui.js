@@ -4,6 +4,7 @@
 // const api = require('./api')
 // const showItemsTemplate = require('../templates/item-listing-grid.handlebars')
 const showPageTemplate = require('../templates/page-listing.handlebars')
+const showUserPages = require('../templates/user-pages.handlebars')
 
 const createPageSuccess = (data) => {
   console.log('create page success')
@@ -22,9 +23,41 @@ const getPagesSuccess = (data) => {
   $('.visitorPageDiv').html(showPagesHtml)
 }
 
+const getCurrentUserPagesSuccess = (data) => {
+  console.log('current user blog. data is:', data)
+  const showUserPagesHtml = showUserPages({
+    pages: data.pages
+  })
+  $('#userHandlebarBody').html(showUserPagesHtml)
+}
+
+const getCurrentUserPagesFail = (data) => {
+  console.log('current user blog fail')
+}
+
+const updateCurrentUserPagesSuccess = (data) => {
+  console.log('update page success')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
+}
+
+const updateCurrentUserPagesFail = (data) => {
+  console.log('update page fail')
+}
+
+const deleteCurrentUserPagesSuccess = (data) => {
+  console.log('delete blog success')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
+}
+
 module.exports = {
   createPageSuccess,
   createPageFailure,
-  getPagesSuccess
-
+  getPagesSuccess,
+  getCurrentUserPagesSuccess,
+  getCurrentUserPagesFail,
+  updateCurrentUserPagesSuccess,
+  updateCurrentUserPagesFail,
+  deleteCurrentUserPagesSuccess
 }

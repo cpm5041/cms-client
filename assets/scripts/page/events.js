@@ -21,12 +21,46 @@ const onGetPages = (event) => {
     .catch(ui.getPagesfailure)
 }
 
+const onGetCurrentUserPages = function () {
+  console.log('get current user blogs click is heard')
+  api.getCurrentUserPages()
+    .then(ui.getCurrentUserPagesSuccess)
+    .catch(ui.getCurrentUserPagesFail)
+}
+
+const onUpdateCurrentUserPages = function (event) {
+  event.preventDefault()
+  console.log(' update user pages click is heard')
+  const data = getFormFields(event.target)
+  const pageId = $(this).attr('data-id')
+  api.updateCurrentUserPages(pageId, data)
+    .then(ui.updateCurrentUserPagesSuccess)
+    .catch(ui.updateCurrentUserPagesFail)
+    .done(onGetCurrentUserPages)
+}
+
+const onDeleteCurrentUserPages = function () {
+  event.preventDefault()
+  console.log('remove current user pages click is heard')
+  const data = $(this).attr('data-id')
+  api.deleteCurrentUserPages(data)
+    .then(ui.deleteCurrentUserPagesSuccess)
+    .catch(ui.deleteCurrentUserPagesFail)
+    .done(onGetCurrentUserPages)
+}
+
 const addPageHandlers = () => {
   $('#create-page-form').on('submit', onCreatePage)
   $('#showPageButton').on('click', onGetPages)
+  $('#cur-user-pages').on('click', onGetCurrentUserPages)
+  $(document).on('submit', '.update-page', onUpdateCurrentUserPages)
+  $(document).on('submit', '.remove-page', onDeleteCurrentUserPages)
 }
 
 module.exports = {
   addPageHandlers,
-  onGetPages
+  onGetPages,
+  onGetCurrentUserPages,
+  onUpdateCurrentUserPages,
+  onDeleteCurrentUserPages
 }

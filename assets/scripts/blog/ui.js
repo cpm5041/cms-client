@@ -38,9 +38,11 @@ const updateCurrentUserBlogsSuccess = (data) => {
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
 }
+
 const updateCurrentUserBlogsFail = (data) => {
   console.log('current user blog fail')
 }
+
 const deleteCurrentUserBlogsSuccess = (data) => {
   console.log('delete blog success')
   $('body').removeClass('modal-open')
