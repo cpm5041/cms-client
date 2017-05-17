@@ -40,9 +40,8 @@ const signInSuccess = (data) => {
   $('#sign-in-email').val('')
   $('#sign-in-password').val('')
   $('#sign-in-modal').modal('toggle')
-  // $('nav').show()
-  // $('.splash-jumbo').hide()
-  // $('.item-jumbo').show()
+  $('.visitor-view').addClass('hidden')
+  $('.user-view').removeClass('hidden')
 }
 
 const signInFailure = (error) => {
@@ -58,6 +57,8 @@ const signOutSuccess = () => {
   store.user = null
   $('#welcomeEmail').html('')
   console.log('sign out success')
+  $('.visitor-view').removeClass('hidden')
+  $('.user-view').addClass('hidden')
 
   // $('.splash-jumbo').show()
   // $('nav').hide()
