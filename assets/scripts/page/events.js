@@ -39,16 +39,28 @@ const onUpdateCurrentUserPages = function (event) {
     .done(onGetCurrentUserPages)
 }
 
+const onDeleteCurrentUserPages = function () {
+  event.preventDefault()
+  console.log('remove current user pages click is heard')
+  const data = $(this).attr('data-id')
+  api.deleteCurrentUserPages(data)
+    .then(ui.deleteCurrentUserPagesSuccess)
+    .catch(ui.deleteCurrentUserPagesFail)
+    .done(onGetCurrentUserPages)
+}
+
 const addPageHandlers = () => {
   $('#create-page-form').on('submit', onCreatePage)
   $('#showPageButton').on('click', onGetPages)
   $('#cur-user-pages').on('click', onGetCurrentUserPages)
   $(document).on('submit', '.update-page', onUpdateCurrentUserPages)
+  $(document).on('submit', '.remove-page', onDeleteCurrentUserPages)
 }
 
 module.exports = {
   addPageHandlers,
   onGetPages,
   onGetCurrentUserPages,
-  onUpdateCurrentUserPages
+  onUpdateCurrentUserPages,
+  onDeleteCurrentUserPages
 }

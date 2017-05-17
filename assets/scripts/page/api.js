@@ -43,9 +43,20 @@ const updateCurrentUserPages = (pageId, data) => {
   })
 }
 
+const deleteCurrentUserPages = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/pages/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createPage,
   getPages,
   getCurrentUserPages,
-  updateCurrentUserPages
+  updateCurrentUserPages,
+  deleteCurrentUserPages
 }

@@ -40,8 +40,15 @@ const updateCurrentUserPagesSuccess = (data) => {
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
 }
+
 const updateCurrentUserPagesFail = (data) => {
   console.log('update page fail')
+}
+
+const deleteCurrentUserPagesSuccess = (data) => {
+  console.log('delete blog success')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
 }
 
 module.exports = {
@@ -51,5 +58,6 @@ module.exports = {
   getCurrentUserPagesSuccess,
   getCurrentUserPagesFail,
   updateCurrentUserPagesSuccess,
-  updateCurrentUserPagesFail
+  updateCurrentUserPagesFail,
+  deleteCurrentUserPagesSuccess
 }
