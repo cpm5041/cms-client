@@ -31,8 +31,21 @@ const getCurrentUserBlogs = function () {
     }
   })
 }
+
+const updateCurrentUserBlogs = (postId, data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + postId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createBlog,
   getBlogs,
-  getCurrentUserBlogs
+  getCurrentUserBlogs,
+  updateCurrentUserBlogs
 }
