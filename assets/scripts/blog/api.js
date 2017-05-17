@@ -21,7 +21,18 @@ const getBlogs = function () {
   })
 }
 
+const getCurrentUserBlogs = function () {
+  console.log(store.user.id)
+  return $.ajax({
+    url: config.apiOrigin + '/userposts/' + store.user.id, // "http://book-json.herokuconfig.com/books"
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   createBlog,
-  getBlogs
+  getBlogs,
+  getCurrentUserBlogs
 }

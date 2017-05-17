@@ -19,9 +19,18 @@ const onGetBlogs = (event) => {
     .then(ui.getBlogsSuccess)
     .catch(ui.getBlogsfailure)
 }
+
+const onGetCurrentUserBlogs = function () {
+  console.log('get current user blogs click is heard')
+  api.getCurrentUserBlogs()
+    .then(ui.getCurrentUserBlogsSuccess)
+    .catch(ui.getCurrentUserBlogsFail)
+}
+
 const addBlogHandlers = () => {
   $('#blogCreateForm').on('submit', onCreateBlog)
   $('#showBlogButton').on('click', onGetBlogs)
+  $('#cur-user-blogs').on('click', onGetCurrentUserBlogs)
 }
 
 module.exports = {
