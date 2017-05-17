@@ -14,10 +14,19 @@ const onCreatePage = function (event) {
     // .done(onGetPages)
 }
 
+const onGetPages = (event) => {
+  // event.preventDefault()
+  api.getPages()
+    .then(ui.getPagesSuccess)
+    .catch(ui.getPagesfailure)
+}
+
 const addPageHandlers = () => {
   $('#create-page-form').on('submit', onCreatePage)
+  $('#showPageButton').on('click', onGetPages)
 }
 
 module.exports = {
-  addPageHandlers
+  addPageHandlers,
+  onGetPages
 }
