@@ -20,7 +20,7 @@ const onGetBlogs = (event) => {
     .catch(ui.getBlogsfailure)
 }
 const addBlogHandlers = () => {
-  $('#create-blog-form').on('submit', onCreateBlog)
+  $('#blogCreateForm').on('submit', onCreateBlog)
   $('#showBlogButton').on('click', onGetBlogs)
 }
 
