@@ -42,10 +42,19 @@ const updateCurrentUserBlogs = (postId, data) => {
     data
   })
 }
-
+const deleteCurrentUserBlogs = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   createBlog,
   getBlogs,
   getCurrentUserBlogs,
-  updateCurrentUserBlogs
+  updateCurrentUserBlogs,
+  deleteCurrentUserBlogs
 }

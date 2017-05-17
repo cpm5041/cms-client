@@ -40,9 +40,11 @@ const onUpdateCurrentUserBlogs = function (event) {
 const onDeleteCurrentUserBlogs = function () {
   event.preventDefault()
   console.log('remove current user blogs click is heard')
-  // api.getCurrentUserBlogs()
-  //   .then(ui.getCurrentUserBlogsSuccess)
-  //   .catch(ui.getCurrentUserBlogsFail)
+  const data = $(this).attr('data-id')
+  api.deleteCurrentUserBlogs(data)
+    .then(ui.deleteCurrentUserBlogsSuccess)
+    .catch(ui.deleteCurrentUserBlogsFail)
+    .done(onGetCurrentUserBlogs)
 }
 const addBlogHandlers = () => {
   $('#blogCreateForm').on('submit', onCreateBlog)
