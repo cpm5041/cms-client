@@ -35,11 +35,22 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href=# id="change-password-modal-link" data-toggle="modal" data-target="#change-password-modal">Change Password</a></li>
-          <li id="sign-out" class="in-session-auth authentication"><a href="#">Sign Out</a></li>
-        </ul>
-      </div>
+        <!-- <ul class="nav navbar-nav navbar-right"> -->
+          <!-- <li><a href=# id="change-password-modal-link" data-toggle="modal" data-target="#change-password-modal">Change Password</a></li> -->
+          <!-- <li id="sign-out" class="in-session-auth authentication"><a href="#">Sign Out</a></li> -->
+        <!-- </ul> -->
+      <ul class="blogActions nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Your Blog Stuff <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" id='#' data-toggle="modal" data-target="#">See all blogs</a></li>
+            <li role="separator" class="divider"></li>
+            <li id="sign-out" class="in-session-auth authentication"><a href="#">Sign Out</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#change-password-modal">Change Password</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
       <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
