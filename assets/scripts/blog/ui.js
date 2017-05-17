@@ -3,6 +3,7 @@
 // const store = require('../store')
 // const api = require('./api')
 const showBlogsTemplate = require('../templates/blog-listing.handlebars')
+const showUserBlogs = require('../templates/user-blogs.handlebars')
 
 const createBlogSuccess = (data) => {
   console.log('create blog success')
@@ -22,15 +23,31 @@ const getBlogsSuccess = (data) => {
 
 const getCurrentUserBlogsSuccess = (data) => {
   console.log('current user blog. data is:', data)
+  const showUserBlogsHtml = showUserBlogs({
+    posts: data.posts
+  })
+  $('#userHandlebarBody').html(showUserBlogsHtml)
 }
 
 const getCurrentUserBlogsFail = (data) => {
   console.log('current user blog fail')
 }
+
+const updateCurrentUserBlogsSuccess = (data) => {
+  console.log('update blog success')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
+}
+const updateCurrentUserBlogsFail = (data) => {
+  console.log('current user blog fail')
+}
+
 module.exports = {
   createBlogSuccess,
   createBlogFailure,
   getBlogsSuccess,
   getCurrentUserBlogsSuccess,
-  getCurrentUserBlogsFail
+  getCurrentUserBlogsFail,
+  updateCurrentUserBlogsSuccess,
+  updateCurrentUserBlogsFail
 }
