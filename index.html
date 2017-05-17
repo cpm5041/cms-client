@@ -56,10 +56,18 @@
       </p>
     </div>
     <!-- END JUMBOTRON -->
+
+    <!--  SHOW BLOGS FOR VISITOR -->
     <button id="showBlogButton" class="btn btn-default showBlogButton" data-toggle="tooltip" title="Click here to see some recent blogs!">Recent Blogs!</button>
-    <div class="container well visitorDiv col-md-12">
+    <div class="container well visitorDiv visitorBlogDiv col-md-12">
+    </div>
+
+    <!-- SHOW PAGES FOR VISITOR -->
+    <button id="showPageButton" class="btn btn-default showPageButton" data-toggle="tooltip" title="Click here to see recent Pages!">Recent Pages!</button>
+    <div class="container well visitorDiv visitorPageDiv col-md-12">
     </div>
     <!-- END Visitor Div -->
+
   </div>
   <!-- User Div -->
   <div class="container userDiv">
@@ -245,6 +253,11 @@
             <div class="form-group">
               <label for="create-body-confirmation">Body</label>
               <input type="text" class="form-control" name="page[body]" id="create-page-body" placeholder="Body" />
+            </div>
+            <!--  create footer -->
+            <div class="form-group">
+              <label for="create-footer-confirmation">Footer</label>
+              <input type="text" class="form-control" name="page[footer]" id="create-page-footer" placeholder="Footer" />
             </div>
             <!-- <button type="submit" class="btn btn-default">Submit</button> -->
             <input type="submit" class="btn btn-default" name="submit" value="Create Page">

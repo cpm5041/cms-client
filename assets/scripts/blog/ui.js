@@ -17,7 +17,7 @@ const getBlogsSuccess = (data) => {
   const showBlogsHtml = showBlogsTemplate({
     posts: data.posts
   })
-  $('.visitorDiv').html(showBlogsHtml)
+  $('.visitorBlogDiv').html(showBlogsHtml)
 }
 
 const getCurrentUserBlogsSuccess = (data) => {
@@ -27,6 +27,7 @@ const getCurrentUserBlogsSuccess = (data) => {
 const getCurrentUserBlogsFail = (data) => {
   console.log('current user blog fail')
 }
+
 module.exports = {
   createBlogSuccess,
   createBlogFailure,
