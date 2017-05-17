@@ -45,9 +45,9 @@ const addAuthHandlers = () => {
   // $('#sign-in-modal-btn').on('click', function () {
   //   $('.auth-status').hide()
   // })
-  // $('#sign-up-modal-trigger-link').on('click', function () {
-  //   $('#sign-in-modal').modal('hide')
-  // })
+  $('#sign-up-modal-trigger-link').on('click', function () {
+    $('#sign-in-modal').modal('hide')
+  })
   // $('#change-password-modal-link').on('click', function () {
   //   $('#change-password-modal').modal('toggle')
   //   $('.auth-status').hide()
