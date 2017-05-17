@@ -13,11 +13,18 @@ const onCreateBlog = function (event) {
     .catch(ui.createBlogFailure)
     // .done(onGetPosts)
 }
-
+const onGetBlogs = (event) => {
+  // event.preventDefault()
+  api.getBlogs()
+    .then(ui.getBlogsSuccess)
+    .catch(ui.getBlogsfailure)
+}
 const addBlogHandlers = () => {
   $('#create-blog-form').on('submit', onCreateBlog)
+  $('#showBlogButton').on('click', onGetBlogs)
 }
 
 module.exports = {
-  addBlogHandlers
+  addBlogHandlers,
+  onGetBlogs
 }

@@ -14,6 +14,14 @@ const createBlog = (data) => {
   })
 }
 
+const getBlogs = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/posts', // "http://book-json.herokuconfig.com/books"
+    method: 'GET'
+  })
+}
+
 module.exports = {
-  createBlog
+  createBlog,
+  getBlogs
 }
