@@ -19,8 +19,18 @@ const getBlogsSuccess = (data) => {
   })
   $('.visitorDiv').html(showBlogsHtml)
 }
+
+const getCurrentUserBlogsSuccess = (data) => {
+  console.log('current user blog. data is:', data)
+}
+
+const getCurrentUserBlogsFail = (data) => {
+  console.log('current user blog fail')
+}
 module.exports = {
   createBlogSuccess,
   createBlogFailure,
-  getBlogsSuccess
+  getBlogsSuccess,
+  getCurrentUserBlogsSuccess,
+  getCurrentUserBlogsFail
 }
