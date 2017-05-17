@@ -32,8 +32,20 @@ const getCurrentUserPages = function () {
   })
 }
 
+const updateCurrentUserPages = (pageId, data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/pages/' + pageId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createPage,
   getPages,
-  getCurrentUserPages
+  getCurrentUserPages,
+  updateCurrentUserPages
 }

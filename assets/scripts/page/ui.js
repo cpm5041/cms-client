@@ -35,10 +35,21 @@ const getCurrentUserPagesFail = (data) => {
   console.log('current user blog fail')
 }
 
+const updateCurrentUserPagesSuccess = (data) => {
+  console.log('update page success')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
+}
+const updateCurrentUserPagesFail = (data) => {
+  console.log('update page fail')
+}
+
 module.exports = {
   createPageSuccess,
   createPageFailure,
   getPagesSuccess,
   getCurrentUserPagesSuccess,
-  getCurrentUserPagesFail
+  getCurrentUserPagesFail,
+  updateCurrentUserPagesSuccess,
+  updateCurrentUserPagesFail
 }

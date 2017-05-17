@@ -28,22 +28,22 @@ const onGetCurrentUserPages = function () {
     .catch(ui.getCurrentUserPagesFail)
 }
 
-// const onUpdateCurrentUserPages = function (event) {
-//   event.preventDefault()
-//   console.log(' update user pages click is heard')
-  // const data = getFormFields(event.target)
-  // const postId = $(this).attr('data-id')
-  // api.updateCurrentUserBlogs(postId, data)
-  //   .then(ui.updateCurrentUserBlogsSuccess)
-  //   .catch(ui.updateCurrentUserBlogsFail)
-  //   .done(onGetCurrentUserBlogs)
+const onUpdateCurrentUserPages = function (event) {
+  event.preventDefault()
+  console.log(' update user pages click is heard')
+  const data = getFormFields(event.target)
+  const pageId = $(this).attr('data-id')
+  api.updateCurrentUserPages(pageId, data)
+    .then(ui.updateCurrentUserPagesSuccess)
+    .catch(ui.updateCurrentUserPagesFail)
+    .done(onGetCurrentUserPages)
 }
 
 const addPageHandlers = () => {
   $('#create-page-form').on('submit', onCreatePage)
   $('#showPageButton').on('click', onGetPages)
   $('#cur-user-pages').on('click', onGetCurrentUserPages)
-  // $(document).on('submit', '.update-page', onUpdateCurrentUserPages)
+  $(document).on('submit', '.update-page', onUpdateCurrentUserPages)
 }
 
 module.exports = {
