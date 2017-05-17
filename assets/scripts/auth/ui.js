@@ -11,15 +11,14 @@ const signUpSuccess = (data) => {
     email: $('#sign-up-email').val(),
     password: $('#sign-up-password').val()
   }
-  // api.signIn({ credentials })
-  //   .then(signInSuccess)
-  //   .catch(signInFailure)
-  // $('#sign-up-email').val('')
-  // $('#sign-up-password').val('')
-  // $('#sign-up-password-confirmation').val('')
-  //
-  // $('#sign-up-modal').modal('hide')
-  // $('#sign-in-modal').modal('show')
+  api.signIn({ credentials })
+    .then(signInSuccess)
+    .catch(signInFailure)
+  $('#sign-up-email').val('')
+  $('#sign-up-password').val('')
+  $('#sign-up-password-confirmation').val('')
+  $('#sign-up-modal').modal('hide')
+  $('#sign-in-modal').modal('show')
 }
 
 const signUpFailure = (error) => {
@@ -33,14 +32,16 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (data) => {
-  console.log('sign in success')
+  console.log('sign in success, data: ', data)
+  const userEmail = data.user.email
+  console.log(userEmail)
   store.user = data.user // this stores the entire user object
+  $('#welcomeEmail').html('Welcome ' + userEmail)
   $('#sign-in-email').val('')
   $('#sign-in-password').val('')
   $('#sign-in-modal').modal('toggle')
-  // $('nav').show()
-  // $('.splash-jumbo').hide()
-  // $('.item-jumbo').show()
+  $('.visitor-view').addClass('hidden')
+  $('.user-view').removeClass('hidden')
 }
 
 const signInFailure = (error) => {
@@ -54,7 +55,10 @@ const signInFailure = (error) => {
 
 const signOutSuccess = () => {
   store.user = null
+  $('#welcomeEmail').html('')
   console.log('sign out success')
+  $('.visitor-view').removeClass('hidden')
+  $('.user-view').addClass('hidden')
 
   // $('.splash-jumbo').show()
   // $('nav').hide()
