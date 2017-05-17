@@ -1,0 +1,18 @@
+<ul>
+  {{#each pages as |page|}}
+    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} col-md-4 updatedWk list-unstyled text-center'>
+      <h1>  <small>{{page.title}}</small></h1>
+      <div>
+        <ul data-id="{{page.id}}" class="page pageStats list-unstyled">
+          <!-- Blog Info -->
+          <div>
+            <!-- <p>Title: {{page.title}}</p> -->
+            <p>Body: {{page.body}}</p>
+          </div>
+        </ul>
+      </div>
+      <hr>
+    </li>
+  {{/each}}
+
+</ul>

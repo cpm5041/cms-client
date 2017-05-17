@@ -14,6 +14,14 @@ const createPage = (data) => {
   })
 }
 
+const getPages = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/pages', // "http://book-json.herokuconfig.com/books"
+    method: 'GET'
+  })
+}
+
 module.exports = {
-  createPage
+  createPage,
+  getPages
 }

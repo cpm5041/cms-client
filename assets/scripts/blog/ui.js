@@ -18,7 +18,7 @@ const getBlogsSuccess = (data) => {
   const showBlogsHtml = showBlogsTemplate({
     posts: data.posts
   })
-  $('.visitorDiv').html(showBlogsHtml)
+  $('.visitorBlogDiv').html(showBlogsHtml)
 }
 
 const getCurrentUserBlogsSuccess = (data) => {
@@ -46,6 +46,7 @@ const deleteCurrentUserBlogsSuccess = (data) => {
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
 }
+
 module.exports = {
   createBlogSuccess,
   createBlogFailure,
