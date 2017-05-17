@@ -11,15 +11,14 @@ const signUpSuccess = (data) => {
     email: $('#sign-up-email').val(),
     password: $('#sign-up-password').val()
   }
-  // api.signIn({ credentials })
-  //   .then(signInSuccess)
-  //   .catch(signInFailure)
-  // $('#sign-up-email').val('')
-  // $('#sign-up-password').val('')
-  // $('#sign-up-password-confirmation').val('')
-  //
-  // $('#sign-up-modal').modal('hide')
-  // $('#sign-in-modal').modal('show')
+  api.signIn({ credentials })
+    .then(signInSuccess)
+    .catch(signInFailure)
+  $('#sign-up-email').val('')
+  $('#sign-up-password').val('')
+  $('#sign-up-password-confirmation').val('')
+  $('#sign-up-modal').modal('hide')
+  $('#sign-in-modal').modal('show')
 }
 
 const signUpFailure = (error) => {
