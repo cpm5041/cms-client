@@ -21,12 +21,34 @@ const onGetPages = (event) => {
     .catch(ui.getPagesfailure)
 }
 
+const onGetCurrentUserPages = function () {
+  console.log('get current user blogs click is heard')
+  api.getCurrentUserPages()
+    .then(ui.getCurrentUserPagesSuccess)
+    .catch(ui.getCurrentUserPagesFail)
+}
+
+// const onUpdateCurrentUserPages = function (event) {
+//   event.preventDefault()
+//   console.log(' update user pages click is heard')
+  // const data = getFormFields(event.target)
+  // const postId = $(this).attr('data-id')
+  // api.updateCurrentUserBlogs(postId, data)
+  //   .then(ui.updateCurrentUserBlogsSuccess)
+  //   .catch(ui.updateCurrentUserBlogsFail)
+  //   .done(onGetCurrentUserBlogs)
+}
+
 const addPageHandlers = () => {
   $('#create-page-form').on('submit', onCreatePage)
   $('#showPageButton').on('click', onGetPages)
+  $('#cur-user-pages').on('click', onGetCurrentUserPages)
+  // $(document).on('submit', '.update-page', onUpdateCurrentUserPages)
 }
 
 module.exports = {
   addPageHandlers,
-  onGetPages
+  onGetPages,
+  onGetCurrentUserPages,
+  onUpdateCurrentUserPages
 }
