@@ -18,8 +18,8 @@ $(() => {
   $('#sign-in-modal-btn').on('click', function () {
     $('#sign-in-error').text('')
     $('#sign-up-error').text('')
-    $('#sign-in').find('input:email, input:password, input:password, select, textarea').val('')
-    $('#sign-up').find('input:email, input:password, input:password, select, textarea').val('')
+    $('#sign-in').find('input:text, input:password, input:password, select, textarea').val('')
+    $('#sign-up').find('input:text, input:password, input:password, select, textarea').val('')
   })
 })
 

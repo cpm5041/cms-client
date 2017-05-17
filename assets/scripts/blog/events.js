@@ -27,10 +27,31 @@ const onGetCurrentUserBlogs = function () {
     .catch(ui.getCurrentUserBlogsFail)
 }
 
+const onUpdateCurrentUserBlogs = function (event) {
+  event.preventDefault()
+  console.log(' update user blogs click is heard')
+  const data = getFormFields(event.target)
+  const postId = $(this).attr('data-id')
+  api.updateCurrentUserBlogs(postId, data)
+    .then(ui.updateCurrentUserBlogsSuccess)
+    .catch(ui.updateCurrentUserBlogsFail)
+    .done(onGetCurrentUserBlogs)
+}
+const onDeleteCurrentUserBlogs = function () {
+  event.preventDefault()
+  console.log('remove current user blogs click is heard')
+  const data = $(this).attr('data-id')
+  api.deleteCurrentUserBlogs(data)
+    .then(ui.deleteCurrentUserBlogsSuccess)
+    .catch(ui.deleteCurrentUserBlogsFail)
+    .done(onGetCurrentUserBlogs)
+}
 const addBlogHandlers = () => {
   $('#blogCreateForm').on('submit', onCreateBlog)
   $('#showBlogButton').on('click', onGetBlogs)
   $('#cur-user-blogs').on('click', onGetCurrentUserBlogs)
+  $(document).on('submit', '.update-post', onUpdateCurrentUserBlogs)
+  $(document).on('submit', '.remove-post', onDeleteCurrentUserBlogs)
 }
 
 module.exports = {

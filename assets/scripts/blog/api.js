@@ -31,8 +31,30 @@ const getCurrentUserBlogs = function () {
     }
   })
 }
+
+const updateCurrentUserBlogs = (postId, data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + postId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+const deleteCurrentUserBlogs = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   createBlog,
   getBlogs,
-  getCurrentUserBlogs
+  getCurrentUserBlogs,
+  updateCurrentUserBlogs,
+  deleteCurrentUserBlogs
 }
