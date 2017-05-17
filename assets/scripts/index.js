@@ -13,6 +13,24 @@ $(() => {
   pageEvents.addPageHandlers()
 })
 
+// upon click of sign in/up button; clear errors and input fields in modals
+$(() => {
+  $('#sign-in-modal-btn').on('click', function () {
+    $('#sign-in-error').text('')
+    $('#sign-up-error').text('')
+    $('#sign-in').find('input:email, input:password, input:password, select, textarea').val('')
+    $('#sign-up').find('input:email, input:password, input:password, select, textarea').val('')
+  })
+})
+
+// upon click of change password button, clear error and input fields in modal
+$(() => {
+  $('#change-password-modal-link').on('click', function () {
+    $('#change-password-failure').text('')
+    $('#change-password').find('input:text, input:password, input:password, select, textarea').val('')
+  })
+})
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
