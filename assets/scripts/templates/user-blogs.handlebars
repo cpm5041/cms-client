@@ -7,6 +7,7 @@
     {{#if post.title}}
       <ul class="list-unstyled">
         <li data-id="{{post.id}}">Body: {{post.body}}</li>
+        <li data-id="{{post.id}}">Date: {{date post.createdAt}}</li>
         <li>
           <button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updatepostmodal{{post.id}}">Update Blog</button>
           <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removepostmodal{{post.id}}">Remove Blog</button>
