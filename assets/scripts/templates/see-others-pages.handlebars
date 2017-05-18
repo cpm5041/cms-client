@@ -1,0 +1,16 @@
+{{#each pages as |page|}}
+{{#if page.title}}
+
+  <!-- Don't uncomment yet -->
+
+  <div class='container text-center'>
+        <div class='{{page.template}} col-md-4'>{{page.title}}
+          <br><br>
+          <p>{{page.body}} </p>
+          <p>{{page.footer}}</p>
+        </div>
+    </div>
+    <br>
+    {{/if}}
+  </div>
+{{/each}}

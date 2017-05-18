@@ -5,6 +5,7 @@
 // const showItemsTemplate = require('../templates/item-listing-grid.handlebars')
 const showPageTemplate = require('../templates/page-listing.handlebars')
 const showUserPages = require('../templates/user-pages.handlebars')
+const showOthersPages = require('../templates/see-others-pages.handlebars')
 
 const createPageSuccess = (data) => {
   console.log('create page success')
@@ -55,6 +56,13 @@ const deleteCurrentUserPagesSuccess = (data) => {
   $('.modal-backdrop').remove()
 }
 
+const getOthersPagesSuccess = (data) => {
+  const showOthersPagesHtml = showOthersPages({
+    pages: data.pages
+  })
+  $('#all-pages').html(showOthersPagesHtml)
+}
+
 module.exports = {
   createPageSuccess,
   createPageFailure,
@@ -63,5 +71,6 @@ module.exports = {
   getCurrentUserPagesFail,
   updateCurrentUserPagesSuccess,
   updateCurrentUserPagesFail,
-  deleteCurrentUserPagesSuccess
+  deleteCurrentUserPagesSuccess,
+  getOthersPagesSuccess
 }
