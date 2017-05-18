@@ -38,7 +38,6 @@ const onGetPages = (event) => {
 }
 
 const onGetCurrentUserPages = function (event) {
-  event.preventDefault()
   console.log('get current user blogs click is heard')
   api.getCurrentUserPages()
     .then(ui.getCurrentUserPagesSuccess)
@@ -46,7 +45,6 @@ const onGetCurrentUserPages = function (event) {
 }
 
 const onGetOthersPages = function (event) {
-  event.preventDefault()
   api.getPages()
     .then(ui.getOthersPagesSuccess)
     .catch(ui.getOthersPagesfailure)
