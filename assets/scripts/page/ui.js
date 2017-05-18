@@ -3,7 +3,7 @@
 // const store = require('../store')
 // const api = require('./api')
 // const showItemsTemplate = require('../templates/item-listing-grid.handlebars')
-const showPageTemplate = require('../templates/page-listing.handlebars')
+// const showPageTemplate = require('../templates/page-listing.handlebars')
 const showUserPages = require('../templates/user-pages.handlebars')
 const showOthersPages = require('../templates/see-others-pages.handlebars')
 
@@ -22,7 +22,7 @@ const createPageFailure = (error) => {
 
 const getPagesSuccess = (data) => {
   console.log('inside get page, data is', data)
-  const showPagesHtml = showPageTemplate({
+  const showPagesHtml = showOthersPages({
     pages: data.pages
   })
   $('.visitorPageDiv').html(showPagesHtml)
