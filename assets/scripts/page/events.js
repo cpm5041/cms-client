@@ -70,12 +70,17 @@ const onDeleteCurrentUserPages = function () {
     .done(onGetCurrentUserPages)
 }
 
+const refreshUpdatePageModal = function () {
+  onGetCurrentUserPages()
+}
+
 const addPageHandlers = () => {
   $('#create-page-form').on('submit', onCreatePage)
   $('#showPageButton').on('click', onGetPages)
   $('#cur-user-pages').on('click', onGetCurrentUserPages)
   $(document).on('submit', '.update-page', onUpdateCurrentUserPages)
   $(document).on('submit', '.remove-page', onDeleteCurrentUserPages)
+  $(document).on('hidden.bs.modal', '.update-page-modal', refreshUpdatePageModal)
 }
 
 module.exports = {
