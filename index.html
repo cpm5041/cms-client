@@ -103,7 +103,61 @@
   <div class="container userDiv">
     <!-- <p id="welcomeEmail" class="hidden col-md-3 well user-view welcomeUser"></p> -->
     <br>
-    <div class='userFeedback col-md-12 hidden user-view'></div>
+    <!-- BEGIN USER FEEDBACK ALERTS -->
+    <div class='userFeedback col-md-12 hidden user-view alerts-container'>
+
+      <!-- BLOG CREATE SUCCESS -->
+      <div class="alert alert-success alert-fixed-top create-success" id="success-blog-create-alert" role="alert">
+        <strong>Success!</strong> Blog Created.
+      </div>
+
+      <!-- PAGE CREATE SUCCESS -->
+      <div class="alert alert-success alert-fixed-top create-success" id="success-page-create-alert" role="alert">
+        <strong>Success!</strong> Page Created.
+      </div>
+
+      <!-- BLOG UPDATE SUCCESS -->
+      <div class="alert alert-success alert-fixed-top update-success" id="success-blog-update-alert" role="alert">
+            <strong>Success!</strong> Blog Updated.
+      </div>
+
+      <!-- PAGE UPDATE SUCCESS -->
+      <div class="alert alert-success alert-fixed-top update-success" id="success-page-update-alert" role="alert">
+            <strong>Success!</strong> Page Updated.
+      </div>
+
+      <!-- BLOG CREATE FAIL -->
+      <div class="alert alert-danger alert-fixed-top create-fail" id="fail-blog-create-alert" role="alert">
+          <strong>Create Blog Failed!</strong> Please put something in all fields.
+      </div>
+
+      <!-- PAGE CREATE FAIL -->
+      <div class="alert alert-danger alert-fixed-top create-fail" id="fail-page-create-alert" role="alert">
+          <strong>Create Page Failed!</strong> Please put something in all fields.
+      </div>
+
+      <!-- BLOG UPDATE FAIL -->
+      <div class="alert alert-danger alert-fixed-top update-fail" id="fail-blog-update-alert" role="alert">
+          <strong>Update Blog Failed!</strong> Please put something in all fields.
+      </div>
+
+      <!-- PAGE UPDATE FAIL -->
+      <div class="alert alert-danger alert-fixed-top update-fail" id="fail-page-update-alert" role="alert">
+          <strong>Update Page Failed!</strong> Please put something in all fields.
+      </div>
+
+      <!-- BLOG DELETE HAPPENED -->
+      <div class="alert alert-info alert-dismissible item-delete-alert-success" role="alert">
+          Blog Was Deleted Successfully.
+      </div>
+
+      <!-- PAGE DELETE HAPPENED -->
+      <div class="alert alert-info alert-dismissible item-delete-alert-success" role="alert">
+          Page Was Deleted Successfully.
+      </div>
+
+    </div>
+    <!-- END USER FEEDBACK ALERTS -->
     <!-- BEGIN USER TABS -->
     <div class='userTabs mediaQuery'>
       <!-- Nav tabs -->
