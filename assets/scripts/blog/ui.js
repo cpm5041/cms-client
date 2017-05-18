@@ -24,11 +24,14 @@ const getBlogsSuccess = (data) => {
 }
 
 const getCurrentUserBlogsSuccess = (data) => {
-  console.log('current user blog. data is:', data)
-  const showUserBlogsHtml = showUserBlogs({
-    posts: data.posts
-  })
-  $('#userHandlebarBody-blog').html(showUserBlogsHtml)
+  if (data.posts.length === 0) {
+    $('#userHandlebarBody-blog').html('You have not posted any blogs')
+  } else {
+    const showUserBlogsHtml = showUserBlogs({
+      posts: data.posts
+    })
+    $('#userHandlebarBody-blog').html(showUserBlogsHtml)
+  }
 }
 
 const getCurrentUserBlogsFail = (data) => {
