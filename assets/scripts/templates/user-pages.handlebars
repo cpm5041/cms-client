@@ -23,9 +23,9 @@
             <div class="modal-body">
             <form class="update-page" data-id="{{page.id}}">
               <fieldset>
-                <input type='text' name='page[title]' id ='updateTitle' placeholder="Updated Title" value ="{{page.title}}" required>
-                <input type='text' name='page[body]' id ='updateBody' placeholder="Updated Body" value ="{{page.body}}" required>
-                <input type='text' name='page[footer]' id ='updateFooter' placeholder="Updated Footer" value ="{{page.footer}}" required>
+                <input type='text' name='page[title]' class="pagefield" id ='updateTitle' maxlength="100" placeholder="Updated Title" value ="{{page.title}}" required>
+                <input type='text' name='page[body]' class="pagefield" id ='updateBody' maxlength="500" placeholder="Updated Body" value ="{{page.body}}" required>
+                <input type='text' name='page[footer]' class="pagefield" id ='updateFooter' maxlength="100" placeholder="Updated Footer" value ="{{page.footer}}" required>
                 <label for="create-body-confirmation">Choose Template</label>
                 <select name="page[template]">
                   {{#dropdown page.template}}
