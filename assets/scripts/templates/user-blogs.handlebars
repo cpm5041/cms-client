@@ -6,7 +6,7 @@
   <div class="text-center">
     {{#if post.title}}
       <ul class="list-unstyled">
-        <li data-id="{{post.id}}">Body: {{post.body}}</li>
+        <li data-id="{{post.id}}">{{post.body}}</li>
         <li data-id="{{post.id}}">Last Updated: {{date post.updatedAt}}</li>
         <li>
           <button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updatepostmodal{{post.id}}">Update Blog</button>
