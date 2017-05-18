@@ -5,9 +5,14 @@
 // const showItemsTemplate = require('../templates/item-listing-grid.handlebars')
 const showPageTemplate = require('../templates/page-listing.handlebars')
 const showUserPages = require('../templates/user-pages.handlebars')
+const showOthersPages = require('../templates/see-others-pages.handlebars')
 
 const createPageSuccess = (data) => {
   console.log('create page success')
+  $('#create-page-title').val('')
+  $('#create-page-body').val('')
+  $('#create-page-footer').val('')
+  $('#create-page-template').val('defaultTemplate')
 }
 
 const createPageFailure = (error) => {
@@ -28,7 +33,7 @@ const getCurrentUserPagesSuccess = (data) => {
   const showUserPagesHtml = showUserPages({
     pages: data.pages
   })
-  $('#userHandlebarBody').html(showUserPagesHtml)
+  $('#userHandlebarBody-page').html(showUserPagesHtml)
 }
 
 const getCurrentUserPagesFail = (data) => {
@@ -51,6 +56,13 @@ const deleteCurrentUserPagesSuccess = (data) => {
   $('.modal-backdrop').remove()
 }
 
+const getOthersPagesSuccess = (data) => {
+  const showOthersPagesHtml = showOthersPages({
+    pages: data.pages
+  })
+  $('#all-pages').html(showOthersPagesHtml)
+}
+
 module.exports = {
   createPageSuccess,
   createPageFailure,
@@ -59,5 +71,6 @@ module.exports = {
   getCurrentUserPagesFail,
   updateCurrentUserPagesSuccess,
   updateCurrentUserPagesFail,
-  deleteCurrentUserPagesSuccess
+  deleteCurrentUserPagesSuccess,
+  getOthersPagesSuccess
 }

@@ -1,18 +1,19 @@
 {{#each pages as |page|}}
+{{#if page.title}}
 
   <!-- Don't uncomment yet -->
 
-  <h1 class ="text-center" data-id="{{page.id}}"> <small>{{page.title}}</small></h1>
-  <div class="text-center">
-    {{#if page.title}}
-      <ul class="list-unstyled">
-        <li data-id="{{page.id}}">Body: {{page.body}}</li>
-        <li data-id="{{page.id}}">Footer: {{page.footer}}</li>
-        <li>
+  <div class='container text-center'>
+        <div class='{{page.template}} col-md-4'>{{page.title}}
+          <br><br>
+          <p>{{page.body}} </p>
+          <p>{{page.footer}}</p>
           <button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updatepagemodal{{page.id}}">Update Page</button>
           <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removepagemodal{{page.id}}">Remove Page</button>
-        </li>
-      </ul>
+        </div>
+    </div>
+    <br>
+
       <div class="modal fade update-page-modal" id="updatepagemodal{{page.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -22,16 +23,15 @@
             <div class="modal-body">
             <form class="update-page" data-id="{{page.id}}">
               <fieldset>
-                <input type='text' name='page[title]' id ='updateTitle' placeholder="Updated Title" value ="{{page.title}}" required>
-                <input type='text' name='page[body]' id ='updateBody' placeholder="Updated Body" value ="{{page.body}}" required>
-                <input type='text' name='page[footer]' id ='updateFooter' placeholder="Updated Footer" value ="{{page.footer}}" required>
-                <label for="create-body-confirmation">Background-Color</label>
-                <select name="page[background]">
-                  {{#dropdown page.background}}
-                  <option value="default-white">Default (White)</option>
-                  <option value="red">Red</option>
-                  <option value="blue">Blue</option>
-                  <option value="green">Green</option>
+                <input type='text' name='page[title]' class="pagefield" id ='updateTitle' maxlength="100" placeholder="Updated Title" value ="{{page.title}}" required>
+                <input type='text' name='page[body]' class="pagefield" id ='updateBody' maxlength="500" placeholder="Updated Body" value ="{{page.body}}" required>
+                <input type='text' name='page[footer]' class="pagefield" id ='updateFooter' maxlength="100" placeholder="Updated Footer" value ="{{page.footer}}" required>
+                <label for="create-body-confirmation">Choose Template</label>
+                <select name="page[template]">
+                  {{#dropdown page.template}}
+                  <option value="defaultTemplate">Default</option>
+                  <option value="coolTemplate">Cool</option>
+                  <option value="fancyTemplate">Fancy</option>
                   {{/dropdown}}
                 </select>
                 <input data-id="{{page.id}}" type="submit" name="submit" value="Update Page">

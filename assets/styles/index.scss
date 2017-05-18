@@ -1,11 +1,12 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import url(https://fonts.googleapis.com/css?family=Rock+Salt);
-@import url(https://fonts.googleapis.com/css?family=Satisfy);
-@import url(https://fonts.googleapis.com/css?family=Chewy);
+// @import url(https://fonts.googleapis.com/css?family=Rock+Salt);
+// @import url(https://fonts.googleapis.com/css?family=Satisfy);
+// @import url(https://fonts.googleapis.com/css?family=Chewy);
+@import url(https://fonts.googleapis.com/css?family=Satisfy|Tangerine|Chewy|Rock+Salt|Permanent+Marker);
 
 body {
-  // font-family: 'Satisfy', cursive;
+  font-family: 'Chewy', cursive;
   background-image: url('https://i.imgur.com/DZcQDA8.jpg');
   background-size: 100%auto;
   font-size: 20px;
@@ -13,12 +14,17 @@ body {
 .welcomeUser {
   font-family: 'Satisfy', cursive;
   font-size: 45px;
+  float: left;
+  text-align: left;
 }
 .createPageDiv {
   clear: both;
 }
 .jumbotron {
-  font-family: 'Satisfy', cursive;
+  font-family: 'Chewy', cursive;
+}
+.userTabs {
+  clear: both;
 }
 
 .hidden{
@@ -32,6 +38,25 @@ body {
   // outline-style: outset;
   // background: #929BA2;
   font: #fff;
+}
+
+.defaultTemplate {
+font-family: "Times New Roman", Georgia, Serif;
+font-size: 30px;
+background-color: white;
+color: black;
+}
+.coolTemplate {
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+  background-color:#4F7C7E;
+  font-size: 27px;
+}
+.fancyTemplate {
+  font-family: 'Tangerine', cursive;
+  color: #F5FF55;
+  background-color: #900C3F;
+  font-size: 36px;
 }
 
 // .show-for-visitor {
