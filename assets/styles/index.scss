@@ -2,6 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url(https://fonts.googleapis.com/css?family=Rock+Salt);
 @import url(https://fonts.googleapis.com/css?family=Satisfy);
+@import url(https://fonts.googleapis.com/css?family=Chewy);
 
 body {
   // font-family: 'Satisfy', cursive;
@@ -22,6 +23,15 @@ body {
 
 .hidden{
   display: none;
+}
+.hbStyle {
+  font-family: 'Chewy', cursive;
+  border: 2px solid black;
+  border-radius: 25px;
+  // outline-color: grey;
+  // outline-style: outset;
+  // background: #929BA2;
+  font: #fff;
 }
 
 // .show-for-visitor {
