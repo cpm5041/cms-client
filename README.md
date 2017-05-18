@@ -23,7 +23,7 @@ FEATHERPEN is blog site created by Team Shake-N-Bake for General Assembly's WDI 
 1. As a user I want to be able to view my pages.
 
 ## ERD
-![ERD](assets/styles/erd.png)
+![ERD](assets/styles/newERD.png)
 
 # Management Approach
 
