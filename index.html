@@ -69,23 +69,23 @@
     <!-- END JUMBOTRON -->
 
 
-<!-- TAB FOR VISITOR BLOGS/PAGES -->
-<div class="visitor-view">
+    <!-- TAB FOR VISITOR BLOGS/PAGES -->
+    <div class="visitor-view">
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a id="showBlogButton" href="#recent-blogs" aria-controls="recent-blogs" role="tab" data-toggle="tab">Recent Blogs</a></li>
-    <li role="presentation"><a id="showPageButton" href="#recent-pages" aria-controls="recent-pages" role="tab" data-toggle="tab">Recent Pages</a></li>
-  </ul>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a id="showBlogButton" href="#recent-blogs" aria-controls="recent-blogs" role="tab" data-toggle="tab">Recent Blogs</a></li>
+        <li role="presentation"><a id="showPageButton" href="#recent-pages" aria-controls="recent-pages" role="tab" data-toggle="tab">Recent Pages</a></li>
+      </ul>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane container well visitorDiv visitorBlogDiv col-md-12 active visitor-view" id="recent-blogs">Click the tab to view recent content</div>
-    <div role="tabpanel" class="tab-pane container well visitorDiv visitorPageDiv col-md-12 visitor-view" id="recent-pages"></div>
-  </div>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane container well visitorDiv visitorBlogDiv col-md-12 active visitor-view" id="recent-blogs">Click the tab to view recent content</div>
+        <div role="tabpanel" class="tab-pane container well visitorDiv visitorPageDiv col-md-12 visitor-view" id="recent-pages"></div>
+      </div>
 
-</div>
-<!-- END TAB FOR VISITOR BLOGS/PAGES -->
+    </div>
+    <!-- END TAB FOR VISITOR BLOGS/PAGES -->
 
 
     <!--  SHOW BLOGS FOR VISITOR -->
@@ -99,33 +99,89 @@
     <!-- <div class="container well visitorDiv visitorPageDiv col-md-12">
     </div> -->
     <!-- END Visitor Div -->
-
   </div>
   <!-- User Div -->
   <div class="container userDiv">
     <p id="welcomeEmail" class="hidden col-md-3 well user-view welcomeUser"></p>
     <br>
-    <div class="container well col-md-3 createPageDiv hidden user-view">Pages
-      <button id="createPageButton" role="button" class="btn btn-default createPageButton" data-toggle="modal" data-target="#createPageModal">Create new Page!</button>
-    </div>
-    <div id="blogBody" class="container well col-md-12 blog hidden user-view">
-      <!-- Blog Text Area -->
-      <div id='blogTextArea' class="container well col-md-9 blog">
-        <form id="blogCreateForm">
-          <textarea id="blogTitleBox" rows="2" cols="75" name="post[title]" placeholder="Enter blog title!"></textarea>
-          <textarea id="blogBodyBox" rows="15" cols="75" name="post[body]" placeholder="Enter blog Body!"></textarea>
+    <!-- BEGIN USER TABS -->
+    <div>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs navbar-right" role="tablist">
+        <li role="presentation" class="active"><a href="#create-blog" aria-controls="create-blog" role="tab" data-toggle="tab" class="hidden user-view">Create Blog</a></li>
+        <li role="presentation"><a href="#create-page" aria-controls="create-page" role="tab" data-toggle="tab" class="hidden user-view">Create Page</a></li>
+        <!--  need to remove tab styling -->
+        <li role="presentation"><a href="#user-blogs" aria-controls="user-blogs" role="tab" data-toggle="tab" class="hidden user-view" id="cur-user-blogs">View/Edit Blogs</a></li>
+        <!--  need to remove tab styling -->
+        <li role="presentation"><a href="#user-pages" aria-controls="user-pages" role="tab" data-toggle="tab" class="hidden user-view" id="cur-user-pages">View/Edit Pages</a></li>
+      </ul>
 
-          <button id="createBlogButton" type="submit" role="button" class="btn btn-default createBlogButton">Submit your Blog!</button>
-        </form>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <!-- Create user blog tab panel-->
+        <div role="tabpanel" class="tab-pane active" id="create-blog">
+          <div id="blogBody" class="container well col-md-12 blog hidden user-view">
+            <!-- Blog Text Area -->
+            <div id='blogTextArea' class="container well col-md-9 blog">
+              <form id="blogCreateForm">
+                <textarea id="blogTitleBox" rows="2" cols="75" name="post[title]" placeholder="Enter blog title!"></textarea>
+                <textarea id="blogBodyBox" rows="15" cols="75" name="post[body]" placeholder="Enter blog Body!"></textarea>
+
+                <button id="createBlogButton" type="submit" role="button" class="btn btn-default createBlogButton">Submit your Blog!</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Create user page tab panel -->
+        <div role="tabpanel" class="tab-pane" id="create-page">
+          <!-- <button id="createPageButton" role="button" class="btn btn-default createPageButton" data-toggle="modal" data-target="#createPageModal">Create new Page!</button> -->
+          <div id="pageBody" class="container well col-md-12 page hidden user-view">
+            <!-- Page Text Area -->
+            <div id='pageTextArea' class="container well col-md-9 page">
+              <form id="create-page-form" role="form">
+                <textarea id="create-page-title" rows="2" cols="75" name="page[title]" placeholder="Enter page title!"></textarea>
+                <textarea id="create-page-body" rows="15" cols="75" name="page[body]" placeholder="Enter page Body!"></textarea>
+                <textarea id="create-page-footer" rows="2" cols="75" name="page[footer]" placeholder="Enter page title!"></textarea>
+              <label for="create-body-confirmation">Background-Color</label>
+              <select name="background-color">
+                <option value="default-white">Default (White)</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+              </select>
+                <button id="createPageButton" type="submit" role="button" class="btn btn-default createPageButton">Submit your Page!</button>
+                <!-- <span><p>Create page had an issue, try again!</p></span> -->
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- View/Edit user blog tab panel -->
+        <div role="tabpanel" class="tab-pane" id="user-blogs">
+          <div id="userHandlebarBody-blog" class="well contextBody hidden user-view">
+          </div>
+        </div>
+        <!-- View/Edit user page tab panel -->
+        <div role="tabpanel" class="tab-pane" id="user-pages">
+          <div id="userHandlebarBody-page" class="well contextBody hidden user-view">
+          </div>
+        </div>
       </div>
+
     </div>
+    <!-- END USER TABS -->
+
+    <!-- CREATE USER PAGE -->
+
+
+    <!-- CREATE USER BLOG -->
   </div>
-  <div class="container">
+  <!-- <div class="container">
     <a class="btn btn-primary hidden user-view" id="cur-user-blogs" role="button">Current User Blogs</a>
     <a class="btn btn-primary hidden user-view" id="cur-user-pages" role="button">Current User Pages</a>
     <div id="userHandlebarBody" class="well contextBody hidden user-view">
     </div>
-  </div>
+  </div> -->
   <!-- Sign-in Modal -->
   <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
     <div class="modal-dialog modal-sm">
@@ -260,11 +316,11 @@
   <!-- BEGIN CREATE MODALS -->
   <!-- BEGIN CREATE PAGE MODAL -->
   <!-- create-page modal -->
-  <div class="modal fade" id="createPageModal" tabindex="-1" role="dialog" aria-labelledby="create-page-modal" aria-hidden="true">
+  <!-- <div class="modal fade" id="createPageModal" tabindex="-1" role="dialog" aria-labelledby="create-page-modal" aria-hidden="true">
     <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
+      <div class="modal-content"> -->
+  <!-- Modal Header -->
+  <!-- <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">
                        <span aria-hidden="true">&times;</span>
                        <span class="sr-only">Close</span>
@@ -272,12 +328,12 @@
           <h4 class="modal-title" id="create-page-modal-label">
                     Create Page
                 </h4>
-        </div>
+        </div> -->
 
-        <!--create page Modal Body -->
-        <div class="modal-body">
+  <!--create page Modal Body -->
+  <!-- <div class="modal-body">
 
-          <form id="create-page-form" role="form">
+          <form id="create-page-form?" role="form">
             <div class="form-group">
             </div>
             <div class="form-group">
@@ -287,9 +343,9 @@
             <div class="form-group">
               <label for="create-body-confirmation">Body</label>
               <input type="text" class="form-control" name="page[body]" id="create-page-body" placeholder="Body" />
-            </div>
-            <!--  create footer -->
-            <div class="form-group">
+            </div> -->
+  <!--  create footer -->
+  <!-- <div class="form-group">
               <label for="create-footer-confirmation">Footer</label>
               <input type="text" class="form-control" name="page[footer]" id="create-page-footer" placeholder="Footer" />
             </div>
@@ -301,15 +357,15 @@
               <option value="green">Green</option>
             </select>
             <br>
-            <!-- <button type="submit" class="btn btn-default">Submit</button> -->
             <input type="submit" class="btn btn-default" name="submit" value="Create Page">
             <div id="create-page-status" class="page-status">
               <span><p>Create page had an issue, try again!</p></span>
             </div>
           </form>
-        </div>
-      </div>
-    </div>
+        </div> -->
+
+  </div>
+  </div>
   </div>
   <!-- END CREATE PAGE MODAL -->
 
