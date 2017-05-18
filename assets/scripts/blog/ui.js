@@ -28,7 +28,7 @@ const getCurrentUserBlogsSuccess = (data) => {
   const showUserBlogsHtml = showUserBlogs({
     posts: data.posts
   })
-  $('#userHandlebarBody').html(showUserBlogsHtml)
+  $('#userHandlebarBody-blog').html(showUserBlogsHtml)
 }
 
 const getCurrentUserBlogsFail = (data) => {

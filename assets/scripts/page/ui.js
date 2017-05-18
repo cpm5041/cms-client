@@ -28,7 +28,7 @@ const getCurrentUserPagesSuccess = (data) => {
   const showUserPagesHtml = showUserPages({
     pages: data.pages
   })
-  $('#userHandlebarBody').html(showUserPagesHtml)
+  $('#userHandlebarBody-page').html(showUserPagesHtml)
 }
 
 const getCurrentUserPagesFail = (data) => {
