@@ -1,18 +1,18 @@
 {{#each pages as |page|}}
+{{#if page.title}}
 
   <!-- Don't uncomment yet -->
 
-  <h1 class ="text-center" data-id="{{page.id}}"> <small>{{page.title}}</small></h1>
-  <div class="text-center">
-    {{#if page.title}}
-      <ul class="list-unstyled">
-        <li data-id="{{page.id}}">Body: {{page.body}}</li>
-        <li data-id="{{page.id}}">Footer: {{page.footer}}</li>
-        <li>
+  <div class='container text-center'>
+        <div class='{{page.template}} col-md-4'>{{page.title}}
+          <br><br>
+          <p>{{page.body}} </p>
+          <p>{{page.footer}}</p>
           <button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updatepagemodal{{page.id}}">Update Page</button>
           <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removepagemodal{{page.id}}">Remove Page</button>
-        </li>
-      </ul>
+      </div>
+    </div>
+
       <div class="modal fade update-page-modal" id="updatepagemodal{{page.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
