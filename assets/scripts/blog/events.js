@@ -73,10 +73,18 @@ const refreshUpdatePostModal = function () {
   onGetCurrentUserBlogs()
 }
 
+const blogFieldListener = function (event) {
+  if (event.which === 13) {
+    console.log('prevent return key')
+    event.preventDefault()
+  }
+}
+
 const addBlogHandlers = () => {
   $('#blogCreateForm').on('submit', onCreateBlog)
   $('#showBlogButton').on('click', onGetBlogs)
   $('#cur-user-blogs').on('click', onGetCurrentUserBlogs)
+  $('.blogfield').keypress(blogFieldListener)
   $(document).on('submit', '.update-post', onUpdateCurrentUserBlogs)
   $(document).on('submit', '.remove-post', onDeleteCurrentUserBlogs)
   $(document).on('hidden.bs.modal', '.update-post-modal', refreshUpdatePostModal)

@@ -82,10 +82,18 @@ const refreshUpdatePageModal = function () {
   onGetCurrentUserPages()
 }
 
+const pageFieldListener = function (event) {
+  if (event.which === 13) {
+    console.log('prevent return key')
+    event.preventDefault()
+  }
+}
+
 const addPageHandlers = () => {
   $('#create-page-form').on('submit', onCreatePage)
   $('#showPageButton').on('click', onGetPages)
   $('#cur-user-pages').on('click', onGetCurrentUserPages)
+  $('.pagefield').keypress(pageFieldListener)
   $(document).on('submit', '.update-page', onUpdateCurrentUserPages)
   $(document).on('submit', '.remove-page', onDeleteCurrentUserPages)
   $(document).on('hidden.bs.modal', '.update-page-modal', refreshUpdatePageModal)

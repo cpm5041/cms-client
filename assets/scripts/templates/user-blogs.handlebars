@@ -7,7 +7,7 @@
     {{#if post.title}}
       <ul class="list-unstyled">
         <li data-id="{{post.id}}">Body: {{post.body}}</li>
-        <li data-id="{{post.id}}">Date: {{date post.createdAt}}</li>
+        <li data-id="{{post.id}}">Last Updated: {{date post.updatedAt}}</li>
         <li>
           <button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updatepostmodal{{post.id}}">Update Blog</button>
           <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removepostmodal{{post.id}}">Remove Blog</button>
@@ -22,8 +22,10 @@
             <div class="modal-body">
             <form class="update-post" data-id="{{post.id}}">
               <fieldset>
-                <input type='text' name='post[title]' id ='updateTitle' placeholder='title' value ="{{post.title}}" required>
-                <input type='text' name='post[body]' id ='updateBody' placeholder='body' value ="{{post.body}}" required>
+                <textarea id="updateTitle" class="blogfield" rows="2" cols="40" maxlength="100" name='post[title]' placeholder='{{post.title}}' value ="{{post.title}}" required>{{post.title}}</textarea>
+                <br>
+                <textarea id="updateBody" class="blogfield" rows="10" cols="40" maxlength="500" name='post[body]' placeholder='{{post.body}}' value ="{{post.body}}" required>{{post.body}}</textarea>
+                <br>
                 <input data-id="{{post.id}}" type="submit" name="submit" value="Update Blog">
             </fieldset>
             </form>
