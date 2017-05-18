@@ -37,11 +37,19 @@ const onGetPages = (event) => {
     .catch(ui.getPagesfailure)
 }
 
-const onGetCurrentUserPages = function () {
+const onGetCurrentUserPages = function (event) {
+  event.preventDefault()
   console.log('get current user blogs click is heard')
   api.getCurrentUserPages()
     .then(ui.getCurrentUserPagesSuccess)
     .catch(ui.getCurrentUserPagesFail)
+}
+
+const onGetOthersPages = function (event) {
+  event.preventDefault()
+  api.getPages()
+    .then(ui.getOthersPagesSuccess)
+    .catch(ui.getOthersPagesfailure)
 }
 
 const onUpdateCurrentUserPages = function (event) {
@@ -81,7 +89,7 @@ const addPageHandlers = () => {
   $(document).on('submit', '.update-page', onUpdateCurrentUserPages)
   $(document).on('submit', '.remove-page', onDeleteCurrentUserPages)
   $(document).on('hidden.bs.modal', '.update-page-modal', refreshUpdatePageModal)
-  $('#all-pages-tab').on('click', onGetPages)
+  $('#all-pages-tab').on('click', onGetOthersPages)
 }
 
 module.exports = {
