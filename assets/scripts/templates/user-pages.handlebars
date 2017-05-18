@@ -5,7 +5,7 @@
   <h1 class ="text-center" data-id="{{page.id}}"> <small>{{page.title}}</small></h1>
   <div class="text-center">
     {{#if page.title}}
-      <ul class="list-unstyled"><li data-id="{{page.id}}">Title: {{page.title}}</li>
+      <ul class="list-unstyled">
         <li data-id="{{page.id}}">Body: {{page.body}}</li>
         <li data-id="{{page.id}}">Footer: {{page.footer}}</li>
         <li>
@@ -13,7 +13,7 @@
           <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removepagemodal{{page.id}}">Remove Page</button>
         </li>
       </ul>
-      <div class="modal fade" id="updatepagemodal{{page.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal fade update-page-modal" id="updatepagemodal{{page.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -22,9 +22,18 @@
             <div class="modal-body">
             <form class="update-page" data-id="{{page.id}}">
               <fieldset>
-                <input type='text' name='page[title]' id ='updateTitle' placeholder="Updated Description">
-                <input type='text' name='page[body]' id ='updateBody' placeholder="Updated Category">
-                <input type='text' name='page[footer]' id ='updateFooter' placeholder="Updated Footer">
+                <input type='text' name='page[title]' id ='updateTitle' placeholder="Updated Title" value ="{{page.title}}" required>
+                <input type='text' name='page[body]' id ='updateBody' placeholder="Updated Body" value ="{{page.body}}" required>
+                <input type='text' name='page[footer]' id ='updateFooter' placeholder="Updated Footer" value ="{{page.footer}}" required>
+                <label for="create-body-confirmation">Background-Color</label>
+                <select name="page[background]">
+                  {{#dropdown page.background}}
+                  <option value="default-white">Default (White)</option>
+                  <option value="red">Red</option>
+                  <option value="blue">Blue</option>
+                  <option value="green">Green</option>
+                  {{/dropdown}}
+                </select>
                 <input data-id="{{page.id}}" type="submit" name="submit" value="Update Page">
             </fieldset>
             </form>
@@ -58,9 +67,6 @@
           </div>
         </div>
       </div>
-
-    {{else}}
-      No blogs.
     {{/if}}
   </div>
 {{/each}}
