@@ -8,6 +8,10 @@ const showUserPages = require('../templates/user-pages.handlebars')
 
 const createPageSuccess = (data) => {
   console.log('create page success')
+  $('#create-page-title').val('')
+  $('#create-page-body').val('')
+  $('#create-page-footer').val('')
+  $('#create-page-template').val('defaultTemplate')
 }
 
 const createPageFailure = (error) => {
