@@ -1,18 +1,26 @@
 {{#each posts as |post|}}
-
+    {{#if post.title}}
   <!-- Don't uncomment yet -->
 
-  <h1 class ="text-center" data-id="{{post.id}}"> <small>{{post.title}}</small></h1>
-  <div class="text-center">
-    {{#if post.title}}
-      <ul class="list-unstyled">
-        <li data-id="{{post.id}}">{{post.body}}</li>
-        <li data-id="{{post.id}}">Last Updated: {{date post.updatedAt}}</li>
-        <li>
-          <button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updatepostmodal{{post.id}}">Update Blog</button>
-          <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removepostmodal{{post.id}}">Remove Blog</button>
-        </li>
-      </ul>
+    <li data-id: "{{post.id}}" data-name="{{post.name}}" class='this{{this.id}} hbStyle col-md-12 updatedWk list-unstyled text-center'>
+      <h1>  <small>{{post.title}}</small></h1>
+      <div>
+        <ul data-id="{{post.id}}" class="post postStats list-unstyled">
+          <!-- Blog Info -->
+          <div>
+            <!-- <p>Title: {{post.title}}</p> -->
+            <p>{{post.body}}</p>
+            <p>Last Updated: {{date post.updatedAt}}</p>
+
+          </div>
+        </ul>
+        <button type="button" class="update btn btn-primary handle" data-toggle="modal" data-target="#updatepostmodal{{post.id}}">Update Blog</button>
+        <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removepostmodal{{post.id}}">Remove Blog</button>
+      </li>
+      </div>
+      <hr>
+    </li>
+
       <div class="modal fade update-post-modal" id="updatepostmodal{{post.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
