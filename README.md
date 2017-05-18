@@ -1,8 +1,8 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# CMS Client - NEED A NEW NAME!
+# FEATHERPEN Client Documentation
 
-FILL IN WITH AN ABOUT OUR APPLICATION
+FEATHERPEN is blog site created by Team Shake-N-Bake for General Assembly's WDI Team Project component.
 
 # Planning
 
@@ -23,8 +23,25 @@ FILL IN WITH AN ABOUT OUR APPLICATION
 1. As a user I want to be able to view my pages.
 
 ## ERD
-![insert ERD](cms-client/assets/styles/erd.png)
+![ERD](assets/styles/erd.png)
 
+# Management Approach
+
+## Meetings and planning
+We had 3 daily meetings, accumulating a max of 15 minutes of meetings per day.
+- 2 daily standups (beginning of the day and at lunch)
+- 1 retrospective per day (end of day)
+
+We had a high level plan to keep us focused on getting to MVP and made daily checklists for the more granular tasks.
+
+![Plan]
+
+## Git
+- used feature branches to code various features
+- merged to features to dev when features were completed
+- merged from dev branch to master for deploys
+- 
+![Git Branches](assets/styles.git_branches.png)
 
 ## [License](LICENSE)
 
