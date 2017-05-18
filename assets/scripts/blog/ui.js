@@ -7,6 +7,8 @@ const showUserBlogs = require('../templates/user-blogs.handlebars')
 
 const createBlogSuccess = (data) => {
   console.log('create blog success')
+  $('#blogTitleBox').val('')
+  $('#blogBodyBox').val('')
 }
 
 const createBlogFailure = (error) => {
