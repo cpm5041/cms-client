@@ -34,14 +34,14 @@ We had 3 daily meetings, accumulating a max of 15 minutes of meetings per day.
 
 We had a high level plan to keep us focused on getting to MVP and made daily checklists for the more granular tasks.
 
-![Plan]
+![Plan](assets/styles/proj_plan.png)
 
 ## Git
 - used feature branches to code various features
 - merged to features to dev when features were completed
 - merged from dev branch to master for deploys
-- 
-![Git Branches](assets/styles.git_branches.png)
+-
+![Git Branches](assets/styles/git_branches.png)
 
 ## [License](LICENSE)
 
