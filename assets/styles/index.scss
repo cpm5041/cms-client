@@ -14,12 +14,17 @@ body {
 .welcomeUser {
   font-family: 'Satisfy', cursive;
   font-size: 45px;
+  float: left;
+  text-align: left;
 }
 .createPageDiv {
   clear: both;
 }
 .jumbotron {
   font-family: 'Chewy', cursive;
+}
+.userTabs {
+  clear: both;
 }
 
 .hidden{
