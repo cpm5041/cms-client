@@ -132,17 +132,24 @@
             </div>
           </div>
         </div>
+
         <!-- Create user page tab panel -->
         <div role="tabpanel" class="tab-pane" id="create-page">
           <!-- <button id="createPageButton" role="button" class="btn btn-default createPageButton" data-toggle="modal" data-target="#createPageModal">Create new Page!</button> -->
           <div id="pageBody" class="container well col-md-12 page hidden user-view">
-            <!-- Blog Text Area -->
+            <!-- Page Text Area -->
             <div id='pageTextArea' class="container well col-md-9 page">
               <form id="create-page-form" role="form">
                 <textarea id="create-page-title" rows="2" cols="75" name="page[title]" placeholder="Enter page title!"></textarea>
                 <textarea id="create-page-body" rows="15" cols="75" name="page[body]" placeholder="Enter page Body!"></textarea>
                 <textarea id="create-page-footer" rows="2" cols="75" name="page[footer]" placeholder="Enter page title!"></textarea>
-
+              <label for="create-body-confirmation">Background-Color</label>
+              <select name="background-color">
+                <option value="default-white">Default (White)</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+              </select>
                 <button id="createPageButton" type="submit" role="button" class="btn btn-default createPageButton">Submit your Page!</button>
                 <!-- <span><p>Create page had an issue, try again!</p></span> -->
               </form>
