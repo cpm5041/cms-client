@@ -28,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <div class="navbar-brand brand-title" >Featherpen!</div>
+        <div class="navbar-brand brand-title">Featherpen!</div>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -107,15 +107,14 @@
     <!-- BEGIN USER TABS -->
     <div class='userTabs'>
       <!-- Nav tabs -->
+      <div id="welcomeEmail" class="navbar-brand hidden user-view welcomeUser"></div>
       <ul class="nav nav-tabs navbar-right" role="tablist">
-        <li id="welcomeEmail" class="navbar-brand hidden user-view welcomeUser"></li>
-
         <li role="presentation" class="active"><a href="#create-blog" aria-controls="create-blog" role="tab" data-toggle="tab" class="hidden user-view">Create Blog</a></li>
         <li role="presentation"><a href="#create-page" aria-controls="create-page" role="tab" data-toggle="tab" class="hidden user-view">Create Page</a></li>
-        <!--  need to remove tab styling -->
-        <li role="presentation"><a href="#user-blogs" aria-controls="user-blogs" role="tab" data-toggle="tab" class="hidden user-view" id="cur-user-blogs">View/Edit Blogs</a></li>
-        <!--  need to remove tab styling -->
-        <li role="presentation"><a href="#user-pages" aria-controls="user-pages" role="tab" data-toggle="tab" class="hidden user-view" id="cur-user-pages">View/Edit Pages</a></li>
+        <li role="presentation"><a href="#user-blogs" aria-controls="user-blogs" role="tab" data-toggle="tab" class="hidden user-view" id="cur-user-blogs">View/Edit Your Blogs</a></li>
+        <li role="presentation"><a href="#user-pages" aria-controls="user-pages" role="tab" data-toggle="tab" class="hidden user-view" id="cur-user-pages">View/Edit Your Pages</a></li>
+        <li role="presentation"><a href="#all-blogs" aria-controls="all-blogs" role="tab" data-toggle="tab" class="hidden user-view" id="all-blogs-tab">See All Blogs</a></li>
+        <li role="presentation"><a href="#all-pages" aria-controls="all-pages" role="tab" data-toggle="tab" class="hidden user-view" id="all-pages-tab">See All Pages</a></li>
       </ul>
 
       <!-- Tab panes -->
@@ -146,8 +145,8 @@
                 <textarea id="create-page-body" rows="15" cols="75" name="page[body]" placeholder="Enter page body!"></textarea>
                 <textarea id="create-page-footer" rows="2" cols="75" name="page[footer]" placeholder="Enter page footer!"></textarea>
                 <br>
-              <label for="create-body-confirmation">Choose Template</label>
-              <select name="page[template]" id="create-page-template">
+                <label for="create-body-confirmation">Choose Template</label>
+                <select name="page[template]" id="create-page-template">
                 <option value="defaultTemplate">Default</option>
                 <option value="coolTemplate">Cool</option>
                 <option value="fancyTemplate">Fancy</option>
@@ -165,12 +164,14 @@
                 <div class='coolTemplate col-md-4'>Cool Template
                   <br><br>
                   <p>This is what your body what look like using the cool template. </p>
-                  <p>Footer</p></div>
-                  <div class='fancyTemplate col-md-4'>Fancy Template
-                    <br><br>
-                    <p>This is what your body what look like using the fancy template. </p>
-                    <p>Footer</p></div>
-                  </div>
+                  <p>Footer</p>
+                </div>
+                <div class='fancyTemplate col-md-4'>Fancy Template
+                  <br><br>
+                  <p>This is what your body what look like using the fancy template. </p>
+                  <p>Footer</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -184,15 +185,24 @@
           <div id="userHandlebarBody-page" class="well contextBody hidden user-view">
           </div>
         </div>
+
+        <!-- View all blogs tab panel -->
+        <div role="tabpanel" class="tab-pane container well visitorBlogDiv user-view col-md-12" id="all-blogs"></div>
+
+
+        <!-- View all pages tab panel -->
+          <div role="tabpanel" class="tab-pane container well visitorPageDiv user-view col-md-12" id="all-pages"></div>
       </div>
 
     </div>
-    <!-- END USER TABS -->
 
-    <!-- CREATE USER PAGE -->
+  </div>
+  <!-- END USER TABS -->
+
+  <!-- CREATE USER PAGE -->
 
 
-    <!-- CREATE USER BLOG -->
+  <!-- CREATE USER BLOG -->
   </div>
   <!-- <div class="container">
     <a class="btn btn-primary hidden user-view" id="cur-user-blogs" role="button">Current User Blogs</a>

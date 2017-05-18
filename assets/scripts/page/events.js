@@ -81,6 +81,7 @@ const addPageHandlers = () => {
   $(document).on('submit', '.update-page', onUpdateCurrentUserPages)
   $(document).on('submit', '.remove-page', onDeleteCurrentUserPages)
   $(document).on('hidden.bs.modal', '.update-page-modal', refreshUpdatePageModal)
+  $('#all-pages-tab').on('click', onGetPages)
 }
 
 module.exports = {

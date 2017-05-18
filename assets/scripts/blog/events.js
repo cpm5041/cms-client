@@ -80,6 +80,7 @@ const addBlogHandlers = () => {
   $(document).on('submit', '.update-post', onUpdateCurrentUserBlogs)
   $(document).on('submit', '.remove-post', onDeleteCurrentUserBlogs)
   $(document).on('hidden.bs.modal', '.update-post-modal', refreshUpdatePostModal)
+  $('#all-blogs-tab').on('click', onGetBlogs)
 }
 
 module.exports = {
