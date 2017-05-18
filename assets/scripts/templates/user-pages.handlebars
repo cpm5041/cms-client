@@ -13,7 +13,7 @@
           <button type="button" class="remove btn btn-default handle" data-toggle="modal" data-target="#removepagemodal{{page.id}}">Remove Page</button>
         </li>
       </ul>
-      <div class="modal fade" id="updatepagemodal{{page.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal fade update-page-modal" id="updatepagemodal{{page.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -22,9 +22,9 @@
             <div class="modal-body">
             <form class="update-page" data-id="{{page.id}}">
               <fieldset>
-                <input type='text' name='page[title]' id ='updateTitle' placeholder="Updated Description" required>
-                <input type='text' name='page[body]' id ='updateBody' placeholder="Updated Body" required>
-                <input type='text' name='page[footer]' id ='updateFooter' placeholder="Updated Footer" required>
+                <input type='text' name='page[title]' id ='updateTitle' placeholder="Updated Title" value ="{{page.title}}" required>
+                <input type='text' name='page[body]' id ='updateBody' placeholder="Updated Body" value ="{{page.body}}" required>
+                <input type='text' name='page[footer]' id ='updateFooter' placeholder="Updated Footer" value ="{{page.footer}}" required>
                 <input data-id="{{page.id}}" type="submit" name="submit" value="Update Page">
             </fieldset>
             </form>

@@ -69,7 +69,7 @@ const onDeleteCurrentUserBlogs = function () {
     .done(onGetCurrentUserBlogs)
 }
 
-const refreshUpdateModal = function () {
+const refreshUpdatePostModal = function () {
   onGetCurrentUserBlogs()
 }
 
@@ -79,7 +79,7 @@ const addBlogHandlers = () => {
   $('#cur-user-blogs').on('click', onGetCurrentUserBlogs)
   $(document).on('submit', '.update-post', onUpdateCurrentUserBlogs)
   $(document).on('submit', '.remove-post', onDeleteCurrentUserBlogs)
-  $(document).on('hidden.bs.modal', '.update-modal', refreshUpdateModal)
+  $(document).on('hidden.bs.modal', '.update-post-modal', refreshUpdatePostModal)
 }
 
 module.exports = {
