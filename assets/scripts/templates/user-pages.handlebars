@@ -26,8 +26,8 @@
                 <input type='text' name='page[body]' id ='updateBody' placeholder="Updated Body" value ="{{page.body}}" required>
                 <input type='text' name='page[footer]' id ='updateFooter' placeholder="Updated Footer" value ="{{page.footer}}" required>
                 <label for="create-body-confirmation">Background-Color</label>
-                <select>
-                   {{#dropdown page.background}}
+                <select name="page[background]">
+                  {{#dropdown page.background}}
                   <option value="default-white">Default (White)</option>
                   <option value="red">Red</option>
                   <option value="blue">Blue</option>
