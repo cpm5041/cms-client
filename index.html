@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>BlogWorld!</title>
+  <title>Featherpen!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -28,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand brand-title" href="#">BlogWorld!</a>
+        <div class="navbar-brand brand-title" >Featherpen!</div>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,7 +60,7 @@
   <div class="container">
     <!-- BEGIN JUMBOTRON -->
     <div class="jumbotron splash-jumbo visitor-view">
-      <h1 class="display-3 expecto-jumbo-text">Bob Loblaw's Law Blog</h1>
+      <h1 class="display-3 expecto-jumbo-text">FEATHERPEN!</h1>
       <p class="lead"></p>
       <p class="lead">
         <a class="btn btn-primary btn-lg sign-in-modal-btn" id="sign-in-modal-btn" data-toggle="modal" data-target="#sign-in-modal" href="#" role="button">Get Started</a>
@@ -102,12 +102,14 @@
   </div>
   <!-- User Div -->
   <div class="container userDiv">
-    <p id="welcomeEmail" class="hidden col-md-3 well user-view welcomeUser"></p>
+    <!-- <p id="welcomeEmail" class="hidden col-md-3 well user-view welcomeUser"></p> -->
     <br>
     <!-- BEGIN USER TABS -->
-    <div>
+    <div class='userTabs'>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs navbar-right" role="tablist">
+        <li id="welcomeEmail" class="navbar-brand hidden user-view welcomeUser"></li>
+
         <li role="presentation" class="active"><a href="#create-blog" aria-controls="create-blog" role="tab" data-toggle="tab" class="hidden user-view">Create Blog</a></li>
         <li role="presentation"><a href="#create-page" aria-controls="create-page" role="tab" data-toggle="tab" class="hidden user-view">Create Page</a></li>
         <!--  need to remove tab styling -->
@@ -157,12 +159,12 @@
           </div>
         </div>
         <!-- View/Edit user blog tab panel -->
-        <div role="tabpanel" class="tab-pane" id="user-blogs">
+        <div role="tabpanel" class="tab-pane container well col-md-12 page" id="user-blogs">
           <div id="userHandlebarBody-blog" class="well contextBody hidden user-view">
           </div>
         </div>
         <!-- View/Edit user page tab panel -->
-        <div role="tabpanel" class="tab-pane" id="user-pages">
+        <div role="tabpanel" class="tab-pane container well col-md-12 page" id="user-pages">
           <div id="userHandlebarBody-page" class="well contextBody hidden user-view">
           </div>
         </div>
