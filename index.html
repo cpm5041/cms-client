@@ -105,7 +105,7 @@
     <br>
     <div class='userFeedback col-md-12 hidden user-view'></div>
     <!-- BEGIN USER TABS -->
-    <div class='userTabs'>
+    <div class='userTabs mediaQuery'>
       <!-- Nav tabs -->
       <div id="welcomeEmail" class="navbar-brand hidden user-view welcomeUser"></div>
       <ul class="nav nav-tabs navbar-right" role="tablist">
@@ -118,12 +118,12 @@
       </ul>
 
       <!-- Tab panes -->
-      <div class="tab-content">
+      <div class="tab-content userTabFunction col-md-12">
         <!-- Create user blog tab panel-->
         <div role="tabpanel" class="tab-pane active" id="create-blog">
-          <div id="blogBody" class="container well col-md-12 blog hidden user-view">
+          <div id="blogBody" class="well col-md-12 blogClass hidden user-view">
             <!-- Blog Text Area -->
-            <div id='blogTextArea' class="container well col-md-9 blog">
+            <div id='blogTextArea' class="well col-md-9 blog">
               <form id="blogCreateForm">
                 <textarea id="blogTitleBox" class="blogfield"rows="2" cols="75" name="post[title]" placeholder="Enter blog title!"></textarea>
                 <textarea id="blogBodyBox" class="blogfield" rows="15" cols="75" name="post[body]" placeholder="Enter blog Body!"></textarea>
@@ -135,7 +135,7 @@
         </div>
 
         <!-- Create user page tab panel -->
-        <div role="tabpanel" class="tab-pane" id="create-page">
+        <div role="tabpanel" class="tab-pane userTabFunction" id="create-page">
           <!-- <button id="createPageButton" role="button" class="btn btn-default createPageButton" data-toggle="modal" data-target="#createPageModal">Create new Page!</button> -->
           <div id="pageBody" class="container well col-md-12 page hidden user-view">
             <!-- Page Text Area -->
