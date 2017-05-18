@@ -74,6 +74,9 @@ const signOutSuccess = () => {
   // $('#bs-example-navbar-collapse-1').collapse('hide')
   // $('#collapseTwo').collapse('hide')
   // $('.item_input').val('')
+  // ADD THE TABS ID TO THE HTML ELEMENT!!!!
+  $('#tabs a[href="#create-blog"]').tab('show')
+  $('#tabs a[href="#recent-blogs"]').tab('show')
 }
 
 const signOutFailure = (error) => {
