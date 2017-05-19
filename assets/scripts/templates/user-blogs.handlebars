@@ -34,6 +34,9 @@
                 <br>
                 <textarea id="updateBody" class="blogfield" rows="10" cols="40" maxlength="500" name='post[body]' placeholder='{{post.body}}' value ="{{post.body}}" required>{{post.body}}</textarea>
                 <br>
+                <p class="textarea-notes">*NOTE: Return key is disabled in text areas.</p>
+                <p class="textarea-notes">Max Character Lengths: Title (100), Body (500).</p>
+                <p class="textarea-notes">All fields are required.</p>
                 <input data-id="{{post.id}}" type="submit" name="submit" value="Update Blog">
             </fieldset>
             </form>

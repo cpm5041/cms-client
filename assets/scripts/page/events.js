@@ -92,6 +92,7 @@ const addPageHandlers = () => {
   $('#showPageButton').on('click', onGetPages)
   $('#cur-user-pages').on('click', onGetCurrentUserPages)
   $('.pagefield').keypress(pageFieldListener)
+  $(document).keypress('.pagefield', pageFieldListener)
   $(document).on('submit', '.update-page', onUpdateCurrentUserPages)
   $(document).on('submit', '.remove-page', onDeleteCurrentUserPages)
   $(document).on('hidden.bs.modal', '.update-page-modal', refreshUpdatePageModal)
