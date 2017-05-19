@@ -6,7 +6,7 @@ FEATHERPEN is a blog site created by Team Shake-N-Bake for General Assembly's WD
 Users can create blogs and pages, view blogs and pages submitted by other users, and update or delete their own content.
 - [Link to Deployed Application](https://shake-and-bake.github.io/cms-client/)
 - [Link to API Repo](https://github.com/Shake-and-Bake/cms-api)
-- [Link to MongoDB URI](mongodb://heroku_j311090q:39tfq1hpvp2gcc2bd1cjen4ti9@ds143071.mlab.com:43071/heroku_j311090q)
+- [Mongo](mongodb://heroku_j311090q:39tfq1hpvp2gcc2bd1cjen4ti9@ds143071.mlab.com:43071/heroku_j311090q)
 - [Link to Heroku App](https://hidden-stream-36451.herokuapp.com/)
 
 # Planning
