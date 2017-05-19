@@ -73,6 +73,8 @@ const signOutSuccess = () => {
   $('#showPageButton').removeClass('active')
   $('#tabs a[href="#create-blog"]').tab('show')
   $('#tabs a[href="#recent-blogs"]').tab('show')
+  $('#blogCreateForm').trigger('reset')
+  $('#create-page-form').trigger('reset')
 }
 
 const signOutFailure = (error) => {
