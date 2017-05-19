@@ -56,6 +56,8 @@ We had a high level plan to keep us focused on getting to MVP and made daily che
 - used GitHub reporting tools to review commit history by developer
 - used GitHub to visualize branch management
 
+![Github](assets/styles/github.png)
+
 ## Git Process
 - QA Lead owned the process
 - Team branched from `master` to `dev` to `feature` branches
@@ -68,8 +70,16 @@ We had a high level plan to keep us focused on getting to MVP and made daily che
 - QA Lead approves pull request
 
 ![Git Branches](assets/styles/git_branches.png)
+![Git Branches](assets/styles/branchManagement.png)
 
 # Client Challenges and Accomplishments
+- Adding handlebars helpers to show the 'Last Updated' field on the rendered list of blogs
+```js
+module.exports = function (createdAt) {
+  const date = createdAt.split('T')[0]
+  return date
+}
+```
 - Adding handlebars helpers to allow user to select which template to apply to pages (Rachel)
 ```js
 <!-- Example Template forms with styling -->
