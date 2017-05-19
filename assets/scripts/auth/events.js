@@ -41,7 +41,6 @@ const onChangePassword = function (event) {
   event.preventDefault()
   // assign input information to data
   const data = getFormFields(event.target)
-  console.log('data is', data)
   // send ajax request
   api.changePassword(data)
     .then(ui.changePasswordSuccess)

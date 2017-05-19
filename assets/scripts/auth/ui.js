@@ -65,7 +65,7 @@ const signOutSuccess = () => {
   // adjust hidden classes
   $('.visitor-view').removeClass('hidden')
   $('.user-view').addClass('hidden')
-  $('#recent-blogs').text('Click the tab to view recent content')
+  $('#recent-blogs').text('Click the tab to view content')
   $('#recent-blogs').addClass('active')
   $('#showBlogButton').addClass('active')
   $('#recent-pages').text('')
