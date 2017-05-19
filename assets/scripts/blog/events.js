@@ -95,6 +95,7 @@ const addBlogHandlers = () => {
   $('#showBlogButton').on('click', onGetBlogs)
   $('#cur-user-blogs').on('click', onGetCurrentUserBlogs)
   $('.blogfield').keypress(blogFieldListener)
+  $(document).keypress('.blogfield', blogFieldListener)
   $(document).on('submit', '.update-post', onUpdateCurrentUserBlogs)
   $(document).on('submit', '.remove-post', onDeleteCurrentUserBlogs)
   $(document).on('hidden.bs.modal', '.update-post-modal', refreshUpdatePostModal)
