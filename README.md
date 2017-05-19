@@ -8,6 +8,22 @@ Users can create blogs and pages, view blogs and pages submitted by other users,
 - [Link to API Repo](https://github.com/Shake-and-Bake/cms-api)
 - [Link to Heroku App](https://hidden-stream-36451.herokuapp.com/)
 
+# Technologies Used
+
+## Dependencies
+Install with `npm install`
+
+- Webpack
+- Bootstrap
+- Handlebars.js
+
+## API
+- Hosted on Heroku
+- MongoDB
+
+## Client
+- Deployed through GitHub
+
 # Planning
 
 ## Stories
@@ -25,6 +41,12 @@ Users can create blogs and pages, view blogs and pages submitted by other users,
 1. As a user I want to be able to update my page.
 1. As a user I want to be able to delete my pages.
 1. As a user I want to be able to view my pages.
+
+## Wireframes
+Our wireframes evolved throughout the course of the project. As we inched closer to MVP we iterated over our design to make it neater and more advanced.
+![Wireframe](assets/styles/wireframe1.jpg)
+![Wireframe](assets/styles/wireframe2.jpg)
+![Wireframe](assets/styles/wireframe3.jpg)
 
 ## ERD
 ![ERD](assets/styles/newERD.png)
@@ -50,6 +72,13 @@ We had a high level plan to keep us focused on getting to MVP and made daily che
  ![Known Bugs and Issues](assets/styles/bugs.png)
 
 # Git
+
+## Teamwork Makes the Dream Work
+- team practiced with branching, pushing, pulling, rebasing several times before starting the project
+- practiced with multiple Hello World repos before touching our project repo
+- Our Git process was developed over several practice runs where we returned to the white board to improve our Git Strategy
+
+![Git Brainstorm](assets/styles/gitbrainstorm.jpg)
 
 ## How We Used Git and GitHub
 - used `feature` branches to code various features
