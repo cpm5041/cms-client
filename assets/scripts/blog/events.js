@@ -22,6 +22,11 @@ const onCreateBlog = function (event) {
   if (checkForBlanks(data)) {
     // if invalid - notify user and do not send to API
     $('.updateerror').text('An error occurred. You must fill in all fields in order to create an item.')
+    $('#fail-blog-create-alert').alert()
+    $('#fail-blog-create-alert').fadeTo(1500, 500).slideUp(500, () => {
+      $('#fail-blog-create-alert').slideUp(500)
+    })
+    $('html, body').animate({ scrollTop: 0 }, 'fast')
   } else {
     api.createBlog(data)
       .then(ui.createBlogSuccess)
@@ -50,6 +55,11 @@ const onUpdateCurrentUserBlogs = function (event) {
   if (checkForBlanks(data)) {
     // if invalid - notify user and do not send to API
     $('.updateerror').text('An error occurred. You must fill in all fields in order to create an item.')
+    $('#success-blog-update-alert').alert()
+    $('#success-blog-update-alert').fadeTo(1500, 500).slideUp(500, () => {
+      $('#success-blog-update-alert').slideUp(500)
+    })
+    $('html, body').animate({ scrollTop: 0 }, 'fast')
   } else {
     const postId = $(this).attr('data-id')
     api.updateCurrentUserBlogs(postId, data)
