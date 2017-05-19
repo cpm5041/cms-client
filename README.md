@@ -46,7 +46,7 @@ Install with `npm install`
 Our wireframes evolved throughout the course of the project. As we inched closer to MVP we iterated over our design to make it neater and more advanced.
 ![Wireframe](assets/styles/wireframe1.jpg)
 ![Wireframe](assets/styles/wireframe2.jpg)
-![Wireframe](assets/styles/wireframe3.jpg)
+![Wireframe](assets/styles/wirerame3.jpg)
 
 ## ERD
 ![ERD](assets/styles/newERD.png)
