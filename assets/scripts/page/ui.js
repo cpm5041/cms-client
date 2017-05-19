@@ -39,11 +39,14 @@ const getPagesSuccess = (data) => {
 }
 
 const getCurrentUserPagesSuccess = (data) => {
-  console.log('current user blog. data is:', data)
-  const showUserPagesHtml = showUserPages({
-    pages: data.pages
-  })
-  $('#userHandlebarBody-page').html(showUserPagesHtml)
+  if (data.pages.length === 0) {
+    $('#userHandlebarBody-page').html('You have not published any pages')
+  } else {
+    const showUserPagesHtml = showUserPages({
+      pages: data.pages
+    })
+    $('#userHandlebarBody-page').html(showUserPagesHtml)
+  }
 }
 
 const getCurrentUserPagesFail = (data) => {
