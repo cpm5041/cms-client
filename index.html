@@ -181,7 +181,10 @@
               <form id="blogCreateForm">
                 <textarea id="blogTitleBox" class="blogfield"rows="2" cols="75" name="post[title]" placeholder="Enter blog title!" required></textarea>
                 <textarea id="blogBodyBox" class="blogfield" rows="15" cols="75" name="post[body]" placeholder="Enter blog Body!" required></textarea>
-
+                <br>
+                <p class="textarea-notes">*NOTE: Return key is disabled in text areas.</p>
+                <p class="textarea-notes">Max Character Lengths: Title (100), Body (500).</p>
+                <p class="textarea-notes">All fields are required.</p>
                 <button id="createBlogButton" type="submit" role="button" class="btn btn-default createBlogButton">Submit your Blog!</button>
               </form>
             </div>
@@ -199,6 +202,9 @@
                 <textarea id="create-page-body" class="pagefield" maxlength="500" rows="15" cols="75" name="page[body]" placeholder="Enter page body!" required></textarea>
                 <textarea id="create-page-footer" class="pagefield" maxlength="100" rows="2" cols="75" name="page[footer]" placeholder="Enter page footer!" required></textarea>
                 <br>
+                <p class="textarea-notes">*NOTE: Return key is disabled in text areas.</p>
+                <p class="textarea-notes">Max Character Lengths: Title (100), Body (500), Footer (100).</p>
+                <p class="textarea-notes">All fields are required.</p>
                 <label for="create-body-confirmation">Choose Template</label>
                 <select name="page[template]" id="create-page-template">
                 <option value="defaultTemplate">Default</option>
