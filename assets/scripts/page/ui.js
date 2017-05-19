@@ -13,11 +13,21 @@ const createPageSuccess = (data) => {
   $('#create-page-body').val('')
   $('#create-page-footer').val('')
   $('#create-page-template').val('defaultTemplate')
+  $('#success-page-create-alert').alert()
+  $('#success-page-create-alert').fadeTo(1500, 500).slideUp(500, () => {
+    $('#success-page-create-alert').slideUp(500)
+  })
+  $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
 const createPageFailure = (error) => {
   console.log('create page fail')
   console.log(error)
+  $('#fail-page-create-alert').alert()
+  $('#fail-page-create-alert').fadeTo(1500, 500).slideUp(500, () => {
+    $('#fail-page-create-alert').slideUp(500)
+  })
+  $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
 const getPagesSuccess = (data) => {
@@ -44,16 +54,31 @@ const updateCurrentUserPagesSuccess = (data) => {
   console.log('update page success')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
+  $('#success-page-update-alert').alert()
+  $('#success-page-update-alert').fadeTo(1500, 500).slideUp(500, () => {
+    $('#success-page-update-alert').slideUp(500)
+  })
+  $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
 const updateCurrentUserPagesFail = (data) => {
   console.log('update page fail')
+  $('#fail-page-update-alert').alert()
+  $('#fail-page-update-alert').fadeTo(1500, 500).slideUp(500, () => {
+    $('#fail-page-update-alert').slideUp(500)
+  })
+  $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
 const deleteCurrentUserPagesSuccess = (data) => {
   console.log('delete blog success')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
+  $('.page-delete-alert-success').alert()
+  $('.page-delete-alert-success').fadeTo(1500, 500).slideUp(500, () => {
+    $('.page-delete-alert-success').slideUp(500)
+  })
+  $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
 const getOthersPagesSuccess = (data) => {
