@@ -16,8 +16,7 @@ const createBlogSuccess = (data) => {
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
-const createBlogFailure = (error) => {
-  console.error(error)
+const createBlogFailure = () => {
     // user feedback messages
   $('#fail-blog-create-alert').alert()
   $('#fail-blog-create-alert').fadeTo(1500, 500).slideUp(500, () => {
@@ -27,7 +26,6 @@ const createBlogFailure = (error) => {
 }
 
 const getBlogsSuccess = (data) => {
-  console.log('inside get blogs, data is', data)
   const showBlogsHtml = showBlogsTemplate({
     posts: data.posts
   })
