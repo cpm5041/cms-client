@@ -16,8 +16,14 @@ body {
   font-size: 45px;
   float: left;
   text-align: left;
+  color: #fff;
 }
+.blogClass {
+  clear:both;}
 .createPageDiv {
+  clear: both;
+}
+.userTabFunction {
   clear: both;
 }
 .jumbotron {
@@ -59,6 +65,14 @@ color: black;
   font-size: 36px;
 }
 
+.alert {
+  font-family: sans-serif;
+}
+
+.textarea-notes {
+  font-family: serif;
+  font-size: 15px;
+}
 // .show-for-visitor {
 //   display: block;
 // }

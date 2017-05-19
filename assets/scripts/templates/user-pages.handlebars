@@ -23,9 +23,10 @@
             <div class="modal-body">
             <form class="update-page" data-id="{{page.id}}">
               <fieldset>
-                <input type='text' name='page[title]' class="pagefield" id ='updateTitle' maxlength="100" placeholder="Updated Title" value ="{{page.title}}" required>
-                <input type='text' name='page[body]' class="pagefield" id ='updateBody' maxlength="500" placeholder="Updated Body" value ="{{page.body}}" required>
-                <input type='text' name='page[footer]' class="pagefield" id ='updateFooter' maxlength="100" placeholder="Updated Footer" value ="{{page.footer}}" required>
+                <textarea id="create-page-title" class="pagefield" maxlength="100" rows="2" cols="40" name="page[title]" placeholder="Updated Title" value ="{{page.title}}" required>{{page.title}}</textarea>
+                <textarea id="create-page-body" class="pagefield" maxlength="500" rows="15" cols="40" name="page[body]" placeholder="Updated Body" value ="{{page.body}}" required>{{page.body}}</textarea>
+                <textarea id="create-page-footer" class="pagefield" maxlength="100" rows="2" cols="40" name="page[footer]" placeholder="Updated Footer" value ="{{page.footer}}" required>{{page.footer}}</textarea>
+                <br>
                 <label for="create-body-confirmation">Choose Template</label>
                 <select name="page[template]">
                   {{#dropdown page.template}}
@@ -33,7 +34,12 @@
                   <option value="coolTemplate">Cool</option>
                   <option value="fancyTemplate">Fancy</option>
                   {{/dropdown}}
+                  <br>
                 </select>
+                  <br>
+                  <p class="textarea-notes">*NOTE: Return key is disabled in text areas.</p>
+                  <p class="textarea-notes">Max Character Lengths: Title (100), Body (500), Footer (100).</p>
+                  <p class="textarea-notes">All fields are required.</p>
                 <input data-id="{{page.id}}" type="submit" name="submit" value="Update Page">
             </fieldset>
             </form>
