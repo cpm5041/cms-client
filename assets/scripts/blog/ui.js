@@ -1,12 +1,12 @@
 'use strict'
 
-// const store = require('../store')
-// const api = require('./api')
 const showBlogsTemplate = require('../templates/blog-listing.handlebars')
 const showUserBlogs = require('../templates/user-blogs.handlebars')
 
+// handles success and fail of blog create, read, update, and destroy
+
 const createBlogSuccess = (data) => {
-  console.log('create blog success')
+  // resets form fields to be blank after success
   $('#blogTitleBox').val('')
   $('#blogBodyBox').val('')
   $('#success-blog-create-alert').alert()
@@ -17,14 +17,15 @@ const createBlogSuccess = (data) => {
 }
 
 const createBlogFailure = (error) => {
-  console.log('create blog fail')
-  console.log(error)
+  console.error(error)
+    // user feedback messages
   $('#fail-blog-create-alert').alert()
   $('#fail-blog-create-alert').fadeTo(1500, 500).slideUp(500, () => {
     $('#fail-blog-create-alert').slideUp(500)
   })
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
+
 const getBlogsSuccess = (data) => {
   console.log('inside get blogs, data is', data)
   const showBlogsHtml = showBlogsTemplate({
@@ -34,8 +35,10 @@ const getBlogsSuccess = (data) => {
 }
 
 const getCurrentUserBlogsSuccess = (data) => {
+  // if logic to handle showing a message to the user if they have posted no blogs
   if (data.posts.length === 0) {
     $('#userHandlebarBody-blog').html('You have not posted any blogs')
+    // else condition to show blogs
   } else {
     const showUserBlogsHtml = showUserBlogs({
       posts: data.posts
@@ -45,11 +48,10 @@ const getCurrentUserBlogsSuccess = (data) => {
 }
 
 const getCurrentUserBlogsFail = (data) => {
-  console.log('current user blog fail')
+
 }
 
 const updateCurrentUserBlogsSuccess = (data) => {
-  console.log('update blog success')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   $('#success-blog-update-alert').alert()
@@ -60,7 +62,6 @@ const updateCurrentUserBlogsSuccess = (data) => {
 }
 
 const updateCurrentUserBlogsFail = (data) => {
-  console.log('current user blog fail')
   $('#fail-blog-update-alert').alert()
   $('#fail-blog-update-alert').fadeTo(1500, 500).slideUp(500, () => {
     $('#fail-blog-update-alert').slideUp(500)
@@ -69,7 +70,6 @@ const updateCurrentUserBlogsFail = (data) => {
 }
 
 const deleteCurrentUserBlogsSuccess = (data) => {
-  console.log('delete blog success')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   $('.blog-delete-alert-success').alert()
