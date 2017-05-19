@@ -36,11 +36,21 @@ We had a high level plan to keep us focused on getting to MVP and made daily che
 
 ![Plan](assets/styles/proj_plan.png)
 
+## Testing and Issue Management
+ - Team members tested features locally after coding
+ - Before submitting a pull request from feature branch to dev branch, the developer tested with a partner
+ - Reviewed code as a team before approving pull request to dev
+ - Spent time at end of everyday testing our most recently deployed code
+ - [Documented bugs and issues](https://docs.google.com/document/d/1FoYQHw9GXsvsY8gV6JM2EhZloFez13ORwp24Nmo1J5w/edit?usp=sharing) as we found them
+
+ ![Known Bugs and Issues](assets/styles/bugs.png)
+
 ## Git
 - used feature branches to code various features
 - merged to features to dev when features were completed
 - merged from dev branch to master for deploys
--
+
+
 ![Git Branches](assets/styles/git_branches.png)
 
 ## [License](LICENSE)
