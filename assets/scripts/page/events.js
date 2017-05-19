@@ -18,20 +18,20 @@ const checkForBlanks = function (data) {
 
 const onCreatePage = function (event) {
   event.preventDefault()
+  // assign form fields inputs to data
   const data = getFormFields(event.target) // same as this
   if (checkForBlanks(data)) {
     // if invalid - notify user and do not send to API
     $('.updateerror').text('An error occurred. You must fill in all fields in order to create an item.')
   } else {
+    // if no blanks - send ajax request
     api.createPage(data)
       .then(ui.createPageSuccess)
       .catch(ui.createPageFailure)
-      // .done(onGetPages)
   }
 }
 
 const onGetPages = (event) => {
-  // event.preventDefault()
   api.getPages()
     .then(ui.getPagesSuccess)
     .catch(ui.getPagesfailure)
@@ -51,11 +51,13 @@ const onGetOthersPages = function (event) {
 
 const onUpdateCurrentUserPages = function (event) {
   event.preventDefault()
+  // assign input form fields to data
   const data = getFormFields(event.target)
   if (checkForBlanks(data)) {
     // if invalid - notify user and do not send to API
     $('.updateerror').text('An error occurred. You must fill in all fields in order to create an item.')
   } else {
+    // use id to update that page id
     const pageId = $(this).attr('data-id')
     api.updateCurrentUserPages(pageId, data)
       .then(ui.updateCurrentUserPagesSuccess)
@@ -66,6 +68,7 @@ const onUpdateCurrentUserPages = function (event) {
 
 const onDeleteCurrentUserPages = function () {
   event.preventDefault()
+  // use data-id in html to delete that page id
   const data = $(this).attr('data-id')
   api.deleteCurrentUserPages(data)
     .then(ui.deleteCurrentUserPagesSuccess)
@@ -74,10 +77,12 @@ const onDeleteCurrentUserPages = function () {
 }
 
 const refreshUpdatePageModal = function () {
+  // when modal closes, run a GET request
   onGetCurrentUserPages()
 }
 
 const pageFieldListener = function (event) {
+  // prevent user from using return key
   if (event.which === 13) {
     event.preventDefault()
   }

@@ -8,6 +8,7 @@ const showUserPages = require('../templates/user-pages.handlebars')
 const showOthersPages = require('../templates/see-others-pages.handlebars')
 
 const createPageSuccess = (data) => {
+  // clear values in fields
   $('#create-page-title').val('')
   $('#create-page-body').val('')
   $('#create-page-footer').val('')
