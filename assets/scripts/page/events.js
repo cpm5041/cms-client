@@ -38,7 +38,6 @@ const onGetPages = (event) => {
 }
 
 const onGetCurrentUserPages = function (event) {
-  console.log('get current user blogs click is heard')
   api.getCurrentUserPages()
     .then(ui.getCurrentUserPagesSuccess)
     .catch(ui.getCurrentUserPagesFail)
@@ -52,7 +51,6 @@ const onGetOthersPages = function (event) {
 
 const onUpdateCurrentUserPages = function (event) {
   event.preventDefault()
-  console.log(' update user pages click is heard')
   const data = getFormFields(event.target)
   if (checkForBlanks(data)) {
     // if invalid - notify user and do not send to API
@@ -68,7 +66,6 @@ const onUpdateCurrentUserPages = function (event) {
 
 const onDeleteCurrentUserPages = function () {
   event.preventDefault()
-  console.log('remove current user pages click is heard')
   const data = $(this).attr('data-id')
   api.deleteCurrentUserPages(data)
     .then(ui.deleteCurrentUserPagesSuccess)
@@ -82,7 +79,6 @@ const refreshUpdatePageModal = function () {
 
 const pageFieldListener = function (event) {
   if (event.which === 13) {
-    console.log('prevent return key')
     event.preventDefault()
   }
 }
