@@ -8,7 +8,7 @@ const showUserPages = require('../templates/user-pages.handlebars')
 const showOthersPages = require('../templates/see-others-pages.handlebars')
 
 const createPageSuccess = (data) => {
-  console.log('create page success')
+  // clear values in fields
   $('#create-page-title').val('')
   $('#create-page-body').val('')
   $('#create-page-footer').val('')
@@ -20,9 +20,7 @@ const createPageSuccess = (data) => {
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
-const createPageFailure = (error) => {
-  console.log('create page fail')
-  console.log(error)
+const createPageFailure = () => {
   $('#fail-page-create-alert').alert()
   $('#fail-page-create-alert').fadeTo(1500, 500).slideUp(500, () => {
     $('#fail-page-create-alert').slideUp(500)
@@ -31,7 +29,6 @@ const createPageFailure = (error) => {
 }
 
 const getPagesSuccess = (data) => {
-  console.log('inside get page, data is', data)
   const showPagesHtml = showOthersPages({
     pages: data.pages
   })
@@ -50,11 +47,9 @@ const getCurrentUserPagesSuccess = (data) => {
 }
 
 const getCurrentUserPagesFail = (data) => {
-  console.log('current user blog fail')
 }
 
 const updateCurrentUserPagesSuccess = (data) => {
-  console.log('update page success')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   $('#success-page-update-alert').alert()
@@ -65,7 +60,6 @@ const updateCurrentUserPagesSuccess = (data) => {
 }
 
 const updateCurrentUserPagesFail = (data) => {
-  console.log('update page fail')
   $('#fail-page-update-alert').alert()
   $('#fail-page-update-alert').fadeTo(1500, 500).slideUp(500, () => {
     $('#fail-page-update-alert').slideUp(500)
@@ -74,7 +68,6 @@ const updateCurrentUserPagesFail = (data) => {
 }
 
 const deleteCurrentUserPagesSuccess = (data) => {
-  console.log('delete blog success')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   $('.page-delete-alert-success').alert()

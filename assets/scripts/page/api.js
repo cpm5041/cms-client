@@ -22,7 +22,6 @@ const getPages = function () {
 }
 
 const getCurrentUserPages = function () {
-  console.log(store.user.id)
   return $.ajax({
     url: config.apiOrigin + '/userpages/' + store.user.id, // "http://book-json.herokuconfig.com/books"
     method: 'GET',
