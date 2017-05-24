@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://hidden-stream-36451.herokuapp.com'
+    production: 'https://secure-springs-95440.herokuapp.com'
   }
 }
 
