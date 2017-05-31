@@ -16,8 +16,21 @@
         <div id="commentBodyDiv" data-id="{{post.id}}">
           {{#each post.comments as |comment|}}
           {{#if comment.body}}
-          <p>Comment: {{comment.body}} <button type="button" class="removeComment btn btn-default handle" data-id="{{post.id}}" data-toggle='{{comment.id}}'>Delete Comment</button></p>
-
+          <!-- View Each Comments -->
+          <p>Comment: {{comment.body}}
+          <!-- Delete Comments -->
+          <button type="button" class="removeComment btn btn-default handle" data-id="{{post.id}}" data-toggle='{{comment.id}}'>Delete Comment</button></p><br>
+          <!-- Update Comments -->
+          <div>
+          <button type="button" class="updateComment btn btn-default handle" data-id="{{post.id}}" data-toggle='{{comment.id}}'>Update Comment</button></p>
+          <form data-id="{{post.id}}" data-toggle='{{comment.id}}' class="comment updateComment signedInComment">
+            <fieldset>
+              <textarea id="submitComment" rows="2" cols="40" maxlength="100" name='comment[body]' placeholder='Update Comment' required></textarea>
+              <input type="submit" name="submit" value="Save Update">
+          </fieldset>
+        </form>
+        </div>
+        <br>
           {{/if}}
           {{/each}}
         </div>

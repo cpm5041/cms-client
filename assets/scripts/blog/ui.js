@@ -21,6 +21,12 @@ const createCommentSuccess = data => {
 const createCommentFailure = data => {
   console.log('in createCommentFailure, data is ', data)
 }
+const updateCurrentUserComments = data => {
+  console.log('in updateCommentSuccess', data)
+}
+const updateCurrentUserCommentsFail = data => {
+  console.log('in updateCommentFailure, data is ', data)
+}
 const createBlogFailure = () => {
     // user feedback messages
   $('#fail-blog-create-alert').alert()
@@ -99,5 +105,7 @@ module.exports = {
   createCommentSuccess,
   createCommentFailure,
   deleteCurrentUserCommentsSuccess,
-  deleteCurrentUserCommentsFail
+  deleteCurrentUserCommentsFail,
+  updateCurrentUserComments,
+  updateCurrentUserCommentsFail
 }

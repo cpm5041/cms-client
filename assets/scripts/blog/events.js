@@ -123,7 +123,30 @@ const blogFieldListener = function (event) {
     event.preventDefault()
   }
 }
-
+const onUpdateComment = function (event) {
+  event.preventDefault()
+  // const data = getFormFields(event.target)
+  // if (checkForBlanks(data)) {
+  //   // if invalid - notify user and do not send to API
+  //   $('.updateerror').text('An error occurred. You must fill in all fields in order to create an item.')
+  //   $('#fail-blog-update-alert').alert()
+  //   $('#fail-blog-update-alert').fadeTo(1500, 500).slideUp(500, () => {
+  //     $('#fail-blog-update-alert').slideUp(500)
+  //   })
+  //   $('html, body').animate({ scrollTop: 0 }, 'fast')
+  // } else {
+  const data = getFormFields(event.target)
+  const postId = $(this).attr('data-id')
+  const commentId = $(this).attr('data-toggle')
+  console.log('in update, data is ', data)
+  console.log('id is', postId)
+  console.log('commentId', commentId)
+  api.updateCurrentUserComments(data, postId, commentId)
+      .then(ui.updateCurrentUserComments)
+      .catch(ui.updateCurrentUserCommentsFail)
+      .done(onGetBlogs)
+  // }
+}
 // event listeners
 
 const addBlogHandlers = () => {
@@ -138,10 +161,12 @@ const addBlogHandlers = () => {
   $('#all-blogs-tab').on('click', onGetBlogs)
   $(document).on('submit', '.add-comment', onCreateComment)
   $(document).on('click', '.removeComment', onDeleteCurrentUserComment)
+  $(document).on('submit', '.updateComment', onUpdateComment)
 }
 
 module.exports = {
   addBlogHandlers,
   onGetBlogs,
-  onDeleteCurrentUserComment
+  onDeleteCurrentUserComment,
+  onUpdateComment
 }

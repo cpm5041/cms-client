@@ -79,6 +79,17 @@ const deleteCurrentUserComment = (data, id) => {
     }
   })
 }
+// patch request to update a comment created by the current user
+const updateCurrentUserComments = (data, postId, commentId) => {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + postId + '/comments/' + commentId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 module.exports = {
   createBlog,
   getBlogs,
@@ -86,5 +97,6 @@ module.exports = {
   updateCurrentUserBlogs,
   deleteCurrentUserBlogs,
   createComment,
-  deleteCurrentUserComment
+  deleteCurrentUserComment,
+  updateCurrentUserComments
 }
