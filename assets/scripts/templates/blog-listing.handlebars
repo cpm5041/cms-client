@@ -16,7 +16,8 @@
         <div id="commentBodyDiv" data-id="{{post.id}}">
           {{#each post.comments as |comment|}}
           {{#if comment.body}}
-          <p>Comment: {{comment.body}}</p>
+          <p>Comment: {{comment.body}} <button type="button" class="removeComment btn btn-default handle" data-id="{{post.id}}" data-toggle='{{comment.id}}'>Delete Comment</button></p>
+
           {{/if}}
           {{/each}}
         </div>

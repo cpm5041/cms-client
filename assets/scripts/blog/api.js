@@ -69,12 +69,22 @@ const deleteCurrentUserBlogs = (data) => {
     }
   })
 }
-
+// delete request to destroy a blog created by the current user
+const deleteCurrentUserComment = (data, id) => {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + data + '/comments/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   createBlog,
   getBlogs,
   getCurrentUserBlogs,
   updateCurrentUserBlogs,
   deleteCurrentUserBlogs,
-  createComment
+  createComment,
+  deleteCurrentUserComment
 }

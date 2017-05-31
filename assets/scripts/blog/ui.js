@@ -16,7 +16,7 @@ const createBlogSuccess = (data) => {
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 const createCommentSuccess = data => {
-  console.log('in createCommentSuccess')
+  console.log('in createCommentSuccess', data)
 }
 const createCommentFailure = data => {
   console.log('in createCommentFailure, data is ', data)
@@ -81,7 +81,12 @@ const deleteCurrentUserBlogsSuccess = (data) => {
   })
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
-
+const deleteCurrentUserCommentsSuccess = (data) => {
+  console.log(data)
+}
+const deleteCurrentUserCommentsFail = (data) => {
+  console.log(data)
+}
 module.exports = {
   createBlogSuccess,
   createBlogFailure,
@@ -92,5 +97,7 @@ module.exports = {
   updateCurrentUserBlogsFail,
   deleteCurrentUserBlogsSuccess,
   createCommentSuccess,
-  createCommentFailure
+  createCommentFailure,
+  deleteCurrentUserCommentsSuccess,
+  deleteCurrentUserCommentsFail
 }

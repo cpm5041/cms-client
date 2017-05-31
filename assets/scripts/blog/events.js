@@ -100,6 +100,19 @@ const onDeleteCurrentUserBlogs = function () {
     .catch(ui.deleteCurrentUserBlogsFail)
     .done(onGetCurrentUserBlogs)
 }
+const onDeleteCurrentUserComment = function () {
+  event.preventDefault()
+  // makes sure that the data deleted is the data (blogs) of the current_user
+  const data = $(this).attr('data-id')
+  const id = $(this).attr('data-toggle')
+  console.log('in delete, data is ', data)
+  console.log('id is', id)
+  api.deleteCurrentUserComment(data, id)
+    .then(ui.deleteCurrentUserCommentsSuccess)
+    .catch(ui.deleteCurrentUserCommentsFail)
+    .done(onGetCurrentUserBlogs)
+    .done(onGetBlogs)
+}
 
 const refreshUpdatePostModal = function () {
   onGetCurrentUserBlogs()
@@ -124,9 +137,11 @@ const addBlogHandlers = () => {
   $(document).on('hidden.bs.modal', '.update-post-modal', refreshUpdatePostModal)
   $('#all-blogs-tab').on('click', onGetBlogs)
   $(document).on('submit', '.add-comment', onCreateComment)
+  $(document).on('click', '.removeComment', onDeleteCurrentUserComment)
 }
 
 module.exports = {
   addBlogHandlers,
-  onGetBlogs
+  onGetBlogs,
+  onDeleteCurrentUserComment
 }
