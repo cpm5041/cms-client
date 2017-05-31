@@ -15,7 +15,12 @@ const createBlogSuccess = (data) => {
   })
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
-
+const createCommentSuccess = data => {
+  console.log('in createCommentSuccess')
+}
+const createCommentFailure = data => {
+  console.log('in createCommentFailure, data is ', data)
+}
 const createBlogFailure = () => {
     // user feedback messages
   $('#fail-blog-create-alert').alert()
@@ -85,5 +90,7 @@ module.exports = {
   getCurrentUserBlogsFail,
   updateCurrentUserBlogsSuccess,
   updateCurrentUserBlogsFail,
-  deleteCurrentUserBlogsSuccess
+  deleteCurrentUserBlogsSuccess,
+  createCommentSuccess,
+  createCommentFailure
 }

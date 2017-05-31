@@ -37,6 +37,28 @@ const onCreateBlog = function (event) {
       .catch(ui.createBlogFailure)
   }
 }
+const onCreateComment = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const id = $(this).attr('data-id')
+  // if (checkForBlanks(data)) {
+  //   // if invalid - notify user and do not send to API
+  //   $('.updateerror').text('An error occurred. You must fill in all fields in order to create an item.')
+  //   // user validation for blog creation fail
+  //   $('#fail-blog-create-alert').alert()
+  //   $('#fail-blog-create-alert').fadeTo(1500, 500).slideUp(500, () => {
+  //     $('#fail-blog-create-alert').slideUp(500)
+  //   })
+  //   $('html, body').animate({ scrollTop: 0 }, 'fast')
+  // } else {
+  console.log('in createCommentEvent, data is ', data)
+  console.log('id is', id)
+  api.createComment(data, id)
+      .then(ui.createCommentSuccess)
+      .catch(ui.createCommentFailure)
+      .done(onGetBlogs)
+  // }
+}
 const onGetBlogs = (event) => {
   api.getBlogs()
     .then(ui.getBlogsSuccess)
@@ -101,6 +123,7 @@ const addBlogHandlers = () => {
   $(document).on('submit', '.remove-post', onDeleteCurrentUserBlogs)
   $(document).on('hidden.bs.modal', '.update-post-modal', refreshUpdatePostModal)
   $('#all-blogs-tab').on('click', onGetBlogs)
+  $(document).on('submit', '.add-comment', onCreateComment)
 }
 
 module.exports = {

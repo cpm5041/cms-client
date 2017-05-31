@@ -16,6 +16,17 @@ const createBlog = (data) => {
     }
   })
 }
+// post request to create a comment
+const createComment = (data, id) => {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + id + '/comments',
+    method: 'POST',
+    data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 // get request to read all blogs
 const getBlogs = function () {
@@ -64,5 +75,6 @@ module.exports = {
   getBlogs,
   getCurrentUserBlogs,
   updateCurrentUserBlogs,
-  deleteCurrentUserBlogs
+  deleteCurrentUserBlogs,
+  createComment
 }

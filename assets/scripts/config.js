@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://secure-springs-95440.herokuapp.com'
+    production: 'https://git.heroku.com/agile-beyond-40237.git'
   }
 }
 

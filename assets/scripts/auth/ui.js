@@ -47,6 +47,7 @@ const signInSuccess = (data) => {
   // show user view
   $('.visitor-view').addClass('hidden')
   $('.user-view').removeClass('hidden')
+  $('.signedInComment').removeClass('hidden')
 }
 
 const signInFailure = (error) => {
@@ -75,6 +76,7 @@ const signOutSuccess = () => {
   $('#tabs a[href="#recent-blogs"]').tab('show')
   $('#blogCreateForm').trigger('reset')
   $('#create-page-form').trigger('reset')
+  $('.signedInComment').addClass('hidden')
 }
 
 const signOutFailure = (error) => {
