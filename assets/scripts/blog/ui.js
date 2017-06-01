@@ -2,6 +2,7 @@
 
 const showBlogsTemplate = require('../templates/blog-listing.handlebars')
 const showUserBlogs = require('../templates/user-blogs.handlebars')
+const store = require('../store')
 
 // handles success and fail of blog create, read, update, and destroy
 
@@ -38,7 +39,8 @@ const createBlogFailure = () => {
 
 const getBlogsSuccess = (data) => {
   const showBlogsHtml = showBlogsTemplate({
-    posts: data.posts
+    posts: data.posts,
+    email: store.user.email
   })
   $('.visitorBlogDiv').html(showBlogsHtml)
 }

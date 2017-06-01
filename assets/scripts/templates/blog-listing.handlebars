@@ -17,12 +17,12 @@
           {{#each post.comments as |comment|}}
           {{#if comment.body}}
           <!-- View Each Comments -->
-          <p>Comment: {{comment.body}}
+          <p>{{comment.postedByEmail}} commented: {{comment.body}}
           <!-- Delete Comments -->
           <button type="button" class="removeComment btn btn-default handle" data-id="{{post.id}}" data-toggle='{{comment.id}}'>Delete Comment</button></p><br>
           <!-- Update Comments -->
           <div>
-          <button type="button" class="updateComment btn btn-default handle" data-id="{{post.id}}" data-toggle='{{comment.id}}'>Update Comment</button></p>
+          <button type="button" class="updateComment btn btn-default handle" >Update Comment</button></p>
           <form data-id="{{post.id}}" data-toggle='{{comment.id}}' class="comment updateComment signedInComment">
             <fieldset>
               <textarea id="submitComment" rows="2" cols="40" maxlength="100" name='comment[body]' placeholder='Update Comment' required></textarea>
