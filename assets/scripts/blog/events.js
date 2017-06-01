@@ -147,6 +147,16 @@ const onUpdateComment = function (event) {
       .done(onGetBlogs)
   // }
 }
+const onUpdateCommentClick = function (event) {
+  event.preventDefault()
+  const commentId = $(this).attr('data-id')
+  const postId = $(this).attr('data-toggle')
+  console.log(commentId)
+  console.log(postId)
+  console.log('update buton clicked')
+  // console.log($(".updateComment[data-id='commentId']").get())
+  $('.updateForm' + commentId).show()
+}
 // event listeners
 
 const addBlogHandlers = () => {
@@ -162,11 +172,13 @@ const addBlogHandlers = () => {
   $(document).on('submit', '.add-comment', onCreateComment)
   $(document).on('click', '.removeComment', onDeleteCurrentUserComment)
   $(document).on('submit', '.updateComment', onUpdateComment)
+  $(document).on('click', '.updateCommentButton', onUpdateCommentClick)
 }
 
 module.exports = {
   addBlogHandlers,
   onGetBlogs,
   onDeleteCurrentUserComment,
-  onUpdateComment
+  onUpdateComment,
+  onUpdateCommentClick
 }
