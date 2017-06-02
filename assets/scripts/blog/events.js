@@ -59,6 +59,12 @@ const onCreateComment = function (event) {
       .done(onGetBlogs)
   // }
 }
+
+const onGetVisitorBlogs = (event) => {
+  api.getBlogs()
+    .then(ui.getVisitorBlogsSuccess)
+    .catch(ui.getBlogsfailure)
+}
 const onGetBlogs = (event) => {
   api.getBlogs()
     .then(ui.getBlogsSuccess)
@@ -165,7 +171,7 @@ const onUpdateCommentHide = function (event) {
 }
 const addBlogHandlers = () => {
   $('#blogCreateForm').on('submit', onCreateBlog)
-  $('#showBlogButton').on('click', onGetBlogs)
+  $('#showBlogButton').on('click', onGetVisitorBlogs)
   $('#cur-user-blogs').on('click', onGetCurrentUserBlogs)
   $('.blogfield').keypress(blogFieldListener)
   $(document).on('keypress', '.blogfield', blogFieldListener)

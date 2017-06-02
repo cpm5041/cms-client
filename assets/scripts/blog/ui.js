@@ -1,5 +1,6 @@
 'use strict'
 
+const showVisitorBlogsTemplate = require('../templates/visitor-blog-listing.handlebars')
 const showBlogsTemplate = require('../templates/blog-listing.handlebars')
 const showUserBlogs = require('../templates/user-blogs.handlebars')
 const store = require('../store')
@@ -49,6 +50,13 @@ const createBlogFailure = () => {
 //   }
 //   )
 // }
+
+const getVisitorBlogsSuccess = (data) => {
+  const showVisitorBlogsHtml = showVisitorBlogsTemplate({
+    posts: data.posts
+  })
+  $('.visitorBlogDiv2').html(showVisitorBlogsHtml)
+}
 
 const getBlogsSuccess = (data) => {
   data.posts.forEach(post => {
@@ -136,5 +144,6 @@ module.exports = {
   deleteCurrentUserCommentsSuccess,
   deleteCurrentUserCommentsFail,
   updateCurrentUserComments,
-  updateCurrentUserCommentsFail
+  updateCurrentUserCommentsFail,
+  getVisitorBlogsSuccess
 }

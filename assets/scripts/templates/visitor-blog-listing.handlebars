@@ -1,0 +1,28 @@
+<ul>
+  {{#each posts as |post|}}
+    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} hbStyle col-md-12 updatedWk list-unstyled text-center'>
+      <h1>  <small>{{post.title}}</small></h1>
+      <div>
+        <ul data-id="{{post.id}}" class="post postStats list-unstyled">
+          <!-- Blog Info -->
+          <div>
+            <!-- <p>Title: {{post.title}}</p> -->
+            <p>{{post.body}}</p>
+            <p>Last Updated: {{date post.updatedAt}}</p>
+
+          </div>
+        </ul>
+        <!-- View Comments -->
+        <div id="commentBodyDiv" data-id="{{post.id}}">
+          {{#each post.comments as |comment|}}
+            {{#if comment.body}}
+              <!-- View Each Comments -->
+              <p class='commentFont'>{{comment.postedByEmail}} commented: {{comment.body}}</p>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    </li>
+  {{/each}}
+
+</ul>
