@@ -158,7 +158,11 @@ const onUpdateCommentClick = function (event) {
   $('.updateForm' + commentId).show()
 }
 // event listeners
-
+const onUpdateCommentHide = function (event) {
+  event.preventDefault()
+  const commentId = $(this).attr('data-id')
+  $('.updateForm' + commentId).hide()
+}
 const addBlogHandlers = () => {
   $('#blogCreateForm').on('submit', onCreateBlog)
   $('#showBlogButton').on('click', onGetBlogs)
@@ -173,6 +177,7 @@ const addBlogHandlers = () => {
   $(document).on('click', '.removeComment', onDeleteCurrentUserComment)
   $(document).on('submit', '.updateComment', onUpdateComment)
   $(document).on('click', '.updateCommentButton', onUpdateCommentClick)
+  $(document).on('click', '.updateCommentButtonHide', onUpdateCommentHide)
 }
 
 module.exports = {
@@ -180,5 +185,6 @@ module.exports = {
   onGetBlogs,
   onDeleteCurrentUserComment,
   onUpdateComment,
-  onUpdateCommentClick
+  onUpdateCommentClick,
+  onUpdateCommentHide
 }

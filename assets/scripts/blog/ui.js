@@ -68,6 +68,8 @@ const getBlogsSuccess = (data) => {
   })
   console.log('email is', store.user.email)
   $('.visitorBlogDiv').html(showBlogsHtml)
+  $('.updateForm').hide()
+  $('.updateComment').val('')
 }
 
 const getCurrentUserBlogsSuccess = (data) => {

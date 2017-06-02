@@ -2,12 +2,10 @@
   {{#each posts as |post|}}
     <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} hbStyle col-md-12 updatedWk list-unstyled text-center'>
       <h1>  <small>{{post.title}}</small></h1>
-      <p>{{../email}}</p>
       <div>
         <ul data-id="{{post.id}}" class="post postStats list-unstyled">
           <!-- Blog Info -->
           <div>
-            <!-- <p>Title: {{post.title}}</p> -->
             <p>{{post.body}}</p>
             <p>Last Updated: {{date post.updatedAt}}</p>
 
@@ -22,7 +20,6 @@
               <!-- Not current_user Div to Hide -->
               {{#if comment.editComment}}
               <div class='notCurrentUser'>
-                <!-- <p>{{../../email}}</p> -->
                 <!-- Delete Comments -->
                 <button type="button" class="removeComment btn btn-default handle" data-id="{{post.id}}" data-toggle='{{comment.id}}'>Delete Comment</button>
                 <!-- Update Comments Button to show div -->
@@ -34,6 +31,7 @@
                     <fieldset>
                       <textarea id="submitComment" rows="2" cols="40" maxlength="100" name='comment[body]' placeholder='Update Comment' required></textarea>
                       <input type="submit" name="submit" value="Save Update">
+                      <button data-id="{{comment.id}}" type="button" class="updateCommentButtonHide btn btn-xs handle">Cancel</button>
                     </fieldset>
                   </form>
                 </div>
