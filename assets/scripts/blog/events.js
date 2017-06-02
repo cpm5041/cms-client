@@ -18,6 +18,18 @@ const checkForBlanks = function (data) {
     return false
   }
 }
+const checkForCommentBlanks = function (data) {
+  // check to see if user entered valid values in form fields
+  console.log(data)
+  const userComment = (data.comment.body).replace(/ +?/g, '')
+  if ((userComment.length === 0)) {
+    // if not valid - return true
+    return true
+  } else {
+    // if valid - return false
+    return false
+  }
+}
 
 const onCreateBlog = function (event) {
   event.preventDefault()
@@ -41,23 +53,23 @@ const onCreateComment = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = $(this).attr('data-id')
-  // if (checkForBlanks(data)) {
-  //   // if invalid - notify user and do not send to API
-  //   $('.updateerror').text('An error occurred. You must fill in all fields in order to create an item.')
-  //   // user validation for blog creation fail
-  //   $('#fail-blog-create-alert').alert()
-  //   $('#fail-blog-create-alert').fadeTo(1500, 500).slideUp(500, () => {
-  //     $('#fail-blog-create-alert').slideUp(500)
-  //   })
-  //   $('html, body').animate({ scrollTop: 0 }, 'fast')
-  // } else {
+  if (checkForCommentBlanks(data)) {
+    // if invalid - notify user and do not send to API
+    $('.updateerror').text('An error occurred. You must fill in all fields in order to create an item.')
+    // user validation for blog creation fail
+    $('#fail-blog-create-alert').alert()
+    $('#fail-blog-create-alert').fadeTo(1500, 500).slideUp(500, () => {
+      $('#fail-blog-create-alert').slideUp(500)
+    })
+    $('html, body').animate({ scrollTop: 0 }, 'fast')
+  } else {
   console.log('in createCommentEvent, data is ', data)
   console.log('id is', id)
   api.createComment(data, id)
       .then(ui.createCommentSuccess)
       .catch(ui.createCommentFailure)
       .done(onGetBlogs)
-  // }
+  }
 }
 
 const onGetVisitorBlogs = (event) => {
@@ -131,43 +143,43 @@ const blogFieldListener = function (event) {
 }
 const onUpdateComment = function (event) {
   event.preventDefault()
-  // const data = getFormFields(event.target)
-  // if (checkForBlanks(data)) {
-  //   // if invalid - notify user and do not send to API
-  //   $('.updateerror').text('An error occurred. You must fill in all fields in order to create an item.')
-  //   $('#fail-blog-update-alert').alert()
-  //   $('#fail-blog-update-alert').fadeTo(1500, 500).slideUp(500, () => {
-  //     $('#fail-blog-update-alert').slideUp(500)
-  //   })
-  //   $('html, body').animate({ scrollTop: 0 }, 'fast')
-  // } else {
   const data = getFormFields(event.target)
-  const postId = $(this).attr('data-id')
-  const commentId = $(this).attr('data-toggle')
-  console.log('in update, data is ', data)
-  console.log('id is', postId)
-  console.log('commentId', commentId)
-  api.updateCurrentUserComments(data, postId, commentId)
-      .then(ui.updateCurrentUserComments)
-      .catch(ui.updateCurrentUserCommentsFail)
-      .done(onGetBlogs)
-  // }
+  if (checkForCommentBlanks(data)) {
+    // if invalid - notify user and do not send to API
+    $('.updateerror').text('An error occurred. You must fill in all fields in order to create an item.')
+    $('#fail-blog-update-alert').alert()
+    $('#fail-blog-update-alert').fadeTo(1500, 500).slideUp(500, () => {
+      $('#fail-blog-update-alert').slideUp(500)
+    })
+    $('html, body').animate({ scrollTop: 0 }, 'fast')
+  } else {
+    const data = getFormFields(event.target)
+    const postId = $(this).attr('data-id')
+    const commentId = $(this).attr('data-toggle')
+    api.updateCurrentUserComments(data, postId, commentId)
+        .then(ui.updateCurrentUserComments)
+        .catch(ui.updateCurrentUserCommentsFail)
+        .done(onGetBlogs)
+  }
 }
 const onUpdateCommentClick = function (event) {
   event.preventDefault()
   const commentId = $(this).attr('data-id')
   const postId = $(this).attr('data-toggle')
-  console.log(commentId)
+  console.log('comment id', commentId)
   console.log(postId)
   console.log('update buton clicked')
   // console.log($(".updateComment[data-id='commentId']").get())
   $('.updateForm' + commentId).show()
+  $('.updateForm' + commentId).val('')
+  $('.updateCommentButton' + commentId).hide()
 }
 // event listeners
 const onUpdateCommentHide = function (event) {
   event.preventDefault()
   const commentId = $(this).attr('data-id')
   $('.updateForm' + commentId).hide()
+  $('.updateCommentButton' + commentId).show()
 }
 const addBlogHandlers = () => {
   $('#blogCreateForm').on('submit', onCreateBlog)

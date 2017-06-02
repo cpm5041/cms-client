@@ -37,19 +37,6 @@ const createBlogFailure = () => {
   })
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
-// const commentEditable = function (posts) {
-//   console.log('posts are', posts)
-//   return posts.forEach(post => {
-//     post.comments.forEach(comment => {
-//       if (comment.postedByEmail === store.user.email) {
-//         comment.editComment = true
-//       } else {
-//         comment.editComment = false
-//       }
-//     })
-//   }
-//   )
-// }
 
 const getVisitorBlogsSuccess = (data) => {
   const showVisitorBlogsHtml = showVisitorBlogsTemplate({
@@ -86,9 +73,25 @@ const getCurrentUserBlogsSuccess = (data) => {
     $('#userHandlebarBody-blog').html('You have not posted any blogs')
     // else condition to show blogs
   } else {
+    // const showUserBlogsHtml = showUserBlogs({
+    //   posts: data.posts
+    // })
+    data.posts.forEach(post => {
+      post.comments.forEach(comment => {
+        if (comment.postedByEmail === store.user.email) {
+          comment.editComment = true
+        } else {
+          comment.editComment = false
+        }
+      })
+    }
+    )
+    console.log('data. posts are', data.posts)
     const showUserBlogsHtml = showUserBlogs({
-      posts: data.posts
+      posts: data.posts,
+      email: store.user.email
     })
+    console.log('email is', store.user.email)
     $('#userHandlebarBody-blog').html(showUserBlogsHtml)
   }
 }

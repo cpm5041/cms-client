@@ -23,11 +23,11 @@
                 <!-- Delete Comments -->
                 <button type="button" class="removeComment btn btn-default handle" data-id="{{post.id}}" data-toggle='{{comment.id}}'>Delete Comment</button>
                 <!-- Update Comments Button to show div -->
-                <button data-id="{{comment.id}}" type="button" class="updateCommentButton btn btn-default handle">Update Comment</button>
+                <button data-id="{{comment.id}}" type="button" class="'updateCommentButton{{comment.id}}' updateCommentButton btn btn-default handle">Update Comment</button>
                 <!-- Update Comments Form -->
 
                 <div data-id="{{comment.id}}" data-toggle="{{post.id}}" id="updateForm{{comment.id}}" class='updateForm{{comment.id}}' style="display: none;">
-                  <form data-id="{{post.id}}" data-toggle='{{comment.id}}' class="comment updateComment signedInComment">
+                  <form data-id="{{post.id}}" data-toggle='{{comment.id}}' class="comment updateComment 'updateForm{{comment.id}}' signedInComment">
                     <fieldset>
                       <textarea id="submitComment" rows="2" cols="40" maxlength="100" name='comment[body]' placeholder='Update Comment' required></textarea>
                       <input type="submit" name="submit" value="Save Update">
