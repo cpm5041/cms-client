@@ -4,7 +4,7 @@ const showVisitorBlogsTemplate = require('../templates/visitor-blog-listing.hand
 const showBlogsTemplate = require('../templates/blog-listing.handlebars')
 const showUserBlogs = require('../templates/user-blogs.handlebars')
 const store = require('../store')
-
+const showSingleBlogTemplate = require('../templates/single-blog-listing.handlebars')
 // handles success and fail of blog create, read, update, and destroy
 
 const createBlogSuccess = (data) => {
@@ -130,6 +130,17 @@ const deleteCurrentUserCommentsSuccess = (data) => {
 const deleteCurrentUserCommentsFail = (data) => {
   console.log(data)
 }
+const showSingleBlogSuccess = data => {
+  console.log('ui success', data)
+  const showSingleBlogsHtml = showSingleBlogTemplate({
+    posts: data.posts,
+    email: store.user.email
+  })
+  console.log('email is', store.user.email)
+  $('.visitorBlogDiv').html(showSingleBlogsHtml)
+  $('.updateForm').hide()
+  $('.updateComment').val('')
+}
 module.exports = {
   createBlogSuccess,
   createBlogFailure,
@@ -145,5 +156,7 @@ module.exports = {
   deleteCurrentUserCommentsFail,
   updateCurrentUserComments,
   updateCurrentUserCommentsFail,
-  getVisitorBlogsSuccess
+  getVisitorBlogsSuccess,
+  showSingleBlogSuccess,
+  showSingleBlogTemplate
 }

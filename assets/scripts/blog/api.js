@@ -90,6 +90,17 @@ const updateCurrentUserComments = (data, postId, commentId) => {
     data
   })
 }
+
+// show request to show a single blog
+const showBlog = (postId) => {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + postId,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   createBlog,
   getBlogs,
@@ -98,5 +109,6 @@ module.exports = {
   deleteCurrentUserBlogs,
   createComment,
   deleteCurrentUserComment,
-  updateCurrentUserComments
+  updateCurrentUserComments,
+  showBlog
 }
