@@ -174,6 +174,8 @@ const onShowBlog = function (event) {
   const postId = $(this).attr('data-id')
   // $('.showBlog' + postId).hide()
   console.log('postId', postId)
+  $('.hideBlogClass').not(`.this${postId}`).hide()
+  $(`.this${postId} .commentListShow`).show()
   api.showBlog(postId)
   .then(ui.showSingleBlogSuccess)
   .catch(ui.showSingleBlogFail)

@@ -76,6 +76,7 @@ const getBlogsSuccess = (data) => {
   })
   console.log('email is', store.user.email)
   $('.visitorBlogDiv').html(showBlogsHtml)
+  $(`.commentListShow`).hide()
   $('.updateForm').hide()
   $('.updateComment').val('')
 }
@@ -132,14 +133,14 @@ const deleteCurrentUserCommentsFail = (data) => {
 }
 const showSingleBlogSuccess = data => {
   console.log('ui success', data)
-  const showSingleBlogsHtml = showSingleBlogTemplate({
-    posts: data.posts,
-    email: store.user.email
-  })
+  // const showSingleBlogsHtml = showSingleBlogTemplate({
+  //   post: data.post,
+  //   email: store.user.email
+  // })
   console.log('email is', store.user.email)
-  $('.visitorBlogDiv').html(showSingleBlogsHtml)
-  $('.updateForm').hide()
-  $('.updateComment').val('')
+  // $('.visitorBlogDiv').html(showSingleBlogsHtml)
+  // $('.updateForm').hide()
+  // $('.updateComment').val('')
 }
 module.exports = {
   createBlogSuccess,

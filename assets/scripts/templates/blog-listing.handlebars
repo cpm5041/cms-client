@@ -1,6 +1,6 @@
 <ul>
   {{#each posts as |post|}}
-    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} hbStyle col-md-12 updatedWk list-unstyled text-center'>
+    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} hbStyle col-md-12 updatedWk hideBlogClass list-unstyled text-center'>
       <h1>  <small>{{post.title}}</small></h1>
       <div>
         <ul data-id="{{post.id}}" class="post postStats list-unstyled">
@@ -13,7 +13,7 @@
           </div>
         </ul>
         <!-- View Comments -->
-        <div id="commentBodyDiv" data-id="{{post.id}}">
+        <div id="commentBodyDiv" data-id="{{post.id}}" class='commentListShow'>
           {{#each post.comments as |comment|}}
             {{#if comment.body}}
               <!-- View Each Comments -->
