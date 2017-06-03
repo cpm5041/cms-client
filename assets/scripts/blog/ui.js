@@ -139,7 +139,6 @@ const showSingleBlogSuccess = data => {
   // })
   console.log('email is', store.user.email)
   // $('.visitorBlogDiv').html(showSingleBlogsHtml)
-  // $('.updateForm').hide()
   // $('.updateComment').val('')
 }
 module.exports = {

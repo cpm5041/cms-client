@@ -160,6 +160,7 @@ const onUpdateCommentClick = function (event) {
   console.log(commentId)
   console.log(postId)
   console.log('update buton clicked')
+  $(`.this${postId} .commentList`).show()
   // console.log($(".updateComment[data-id='commentId']").get())
   $('.updateForm' + commentId).show()
 }

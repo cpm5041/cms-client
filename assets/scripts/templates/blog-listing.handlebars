@@ -8,7 +8,7 @@
           <div>
             <p>{{post.body}}</p>
             <p>Last Updated: {{date post.updatedAt}}</p>
-            <button type="button" class="showBlog{{post.id}} showBlog btn btn-default handle" data-id="{{post.id}}" data-toggle='{{comment.id}}'>Show Full Blog!</button>
+            <button type="button" class="showBlog{{post.id}} showBlog showBlogButton btn btn-default handle" data-id="{{post.id}}" data-toggle='{{comment.id}}'>Show Full Blog!</button>
 
           </div>
         </ul>
@@ -41,16 +41,16 @@
               <br>
             {{/if}}
           {{/each}}
+          <!-- Add comment  -->
+          <!-- if comment.posted by === store.user.id (pass user into handlebars)  -->
+          <form data-id="{{post.id}}" class="comment add-comment addComment signedInComment">
+            <fieldset>
+              <textarea id="submitComment" class="blogfield" rows="2" cols="40" maxlength="100" name='comment[body]' placeholder='Add Comment' required></textarea>
+              <input type="submit" name="submit" value="addComment">
+            </fieldset>
+          </form>
         </div>
-        <!-- Add comment  -->
-        <!-- if comment.posted by === store.user.id (pass user into handlebars)  -->
-        <form data-id="{{post.id}}" class="comment add-comment addComment signedInComment">
-          <fieldset>
-            <textarea id="submitComment" class="blogfield" rows="2" cols="40" maxlength="100" name='comment[body]' placeholder='Add Comment' required></textarea>
-            <input type="submit" name="submit" value="addComment">
-          </fieldset>
-        </form>
-      </div>
+        </div>
       <hr>
     </li>
   {{/each}}
