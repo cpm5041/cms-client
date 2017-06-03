@@ -80,7 +80,26 @@ const getBlogsSuccess = (data) => {
   $('.updateForm').hide()
   $('.updateComment').val('')
 }
-
+const getBlogsCreateSuccess = (data) => {
+  data.posts.forEach(post => {
+    post.comments.forEach(comment => {
+      if (comment.postedByEmail === store.user.email) {
+        comment.editComment = true
+      } else {
+        comment.editComment = false
+      }
+    })
+  }
+  )
+  console.log('data. posts are', data.posts)
+  const showBlogsHtml = showBlogsTemplate({
+    posts: data.posts,
+    email: store.user.email
+  })
+  console.log('email is', store.user.email)
+  $('.visitorBlogDiv').html(showBlogsHtml)
+  $('.updateComment').val('')
+}
 const getCurrentUserBlogsSuccess = (data) => {
   // if logic to handle showing a message to the user if they have posted no blogs
   if (data.posts.length === 0) {
@@ -158,5 +177,6 @@ module.exports = {
   updateCurrentUserCommentsFail,
   getVisitorBlogsSuccess,
   showSingleBlogSuccess,
-  showSingleBlogTemplate
+  showSingleBlogTemplate,
+  getBlogsCreateSuccess
 }

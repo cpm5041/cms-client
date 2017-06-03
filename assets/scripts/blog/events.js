@@ -56,7 +56,7 @@ const onCreateComment = function (event) {
   api.createComment(data, id)
       .then(ui.createCommentSuccess)
       .catch(ui.createCommentFailure)
-      .done(onGetBlogs)
+      .done(onGetBlogsCreate)
   // }
 }
 
@@ -70,7 +70,11 @@ const onGetBlogs = (event) => {
     .then(ui.getBlogsSuccess)
     .catch(ui.getBlogsfailure)
 }
-
+const onGetBlogsCreate = (event) => {
+  api.getBlogs()
+    .then(ui.getBlogsCreateSuccess)
+    .catch(ui.getBlogsfailure)
+}
 const onGetCurrentUserBlogs = function () {
   api.getCurrentUserBlogs()
     .then(ui.getCurrentUserBlogsSuccess)
@@ -117,7 +121,7 @@ const onDeleteCurrentUserComment = function () {
     .then(ui.deleteCurrentUserCommentsSuccess)
     .catch(ui.deleteCurrentUserCommentsFail)
     .done(onGetCurrentUserBlogs)
-    .done(onGetBlogs)
+    .done(onGetBlogsCreate)
 }
 
 const refreshUpdatePostModal = function () {
@@ -150,7 +154,7 @@ const onUpdateComment = function (event) {
   api.updateCurrentUserComments(data, postId, commentId)
       .then(ui.updateCurrentUserComments)
       .catch(ui.updateCurrentUserCommentsFail)
-      .done(onGetBlogs)
+      .done(onGetBlogsCreate)
   // }
 }
 const onUpdateCommentClick = function (event) {
@@ -206,5 +210,6 @@ module.exports = {
   onUpdateComment,
   onUpdateCommentClick,
   onUpdateCommentHide,
-  onShowBlog
+  onShowBlog,
+  onGetBlogsCreate
 }
