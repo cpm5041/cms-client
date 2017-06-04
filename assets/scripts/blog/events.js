@@ -68,7 +68,7 @@ const onCreateComment = function (event) {
     api.createComment(data, id)
       .then(ui.createCommentSuccess)
       .catch(ui.createCommentFailure)
-      .done(onGetBlogsCreate)
+      .done(onGetBlogs)
   }
 }
 
@@ -133,7 +133,7 @@ const onDeleteCurrentUserComment = function () {
     .then(ui.deleteCurrentUserCommentsSuccess)
     .catch(ui.deleteCurrentUserCommentsFail)
     .done(onGetCurrentUserBlogs)
-    .done(onGetBlogsCreate)
+    .done(onGetBlogs)
 }
 
 const refreshUpdatePostModal = function () {
@@ -163,7 +163,7 @@ const onUpdateComment = function (event) {
     api.updateCurrentUserComments(data, postId, commentId)
       .then(ui.updateCurrentUserComments)
       .catch(ui.updateCurrentUserCommentsFail)
-      .done(onGetBlogsCreate)
+      .done(onGetBlogs)
   }
 }
 const onUpdateCommentClick = function (event) {

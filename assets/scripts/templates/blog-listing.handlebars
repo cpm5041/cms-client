@@ -31,6 +31,7 @@
                   <form data-id="{{post.id}}" data-toggle='{{comment.id}}' class="comment updateComment signedInComment">
                     <fieldset>
                       <textarea id="submitComment" class="comment updateComment" rows="2" cols="40" maxlength="100" name='comment[body]' placeholder='Update Comment' required></textarea>
+                      <p class="textarea-notes">*NOTE: Updating will return you to all blogs upon success.</p>
                       <input type="submit" name="submit" value="Save Update">
                       <button data-id="{{comment.id}}" type="button" class="updateCommentButtonHide btn btn-xs handle">Cancel</button>
                     </fieldset>
@@ -46,6 +47,7 @@
           <form data-id="{{post.id}}" class="comment add-comment addComment signedInComment">
             <fieldset>
               <textarea id="submitComment" class="blogfield addComment" rows="2" cols="40" maxlength="200" name='comment[body]' placeholder='Add Comment' required></textarea>
+              <p class="textarea-notes">*NOTE: Upon commenting you will be returned to the list of all blogs.</p>
               <input type="submit" name="submit" value="addComment">
             </fieldset>
           </form>
