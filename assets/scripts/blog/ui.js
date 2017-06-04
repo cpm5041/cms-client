@@ -18,13 +18,18 @@ const createBlogSuccess = (data) => {
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 const createCommentSuccess = data => {
-  console.log('in createCommentSuccess', data)
+  $('#comment-create-alert-success').alert()
+  $('#comment-create-alert-success').fadeTo(1500, 500).slideUp(500, () => {
+    $('#comment-create-alert-success').slideUp(500)
+  })
 }
 const createCommentFailure = data => {
-  console.log('in createCommentFailure, data is ', data)
 }
 const updateCurrentUserComments = data => {
-  console.log('in updateCommentSuccess', data)
+  $('#comment-update-alert-success').alert()
+  $('#comment-update-alert-success').fadeTo(1500, 500).slideUp(500, () => {
+    $('#comment-update-alert-success').slideUp(500)
+  })
 }
 const updateCurrentUserCommentsFail = data => {
   console.log('in updateCommentFailure, data is ', data)
@@ -37,19 +42,6 @@ const createBlogFailure = () => {
   })
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
-// const commentEditable = function (posts) {
-//   console.log('posts are', posts)
-//   return posts.forEach(post => {
-//     post.comments.forEach(comment => {
-//       if (comment.postedByEmail === store.user.email) {
-//         comment.editComment = true
-//       } else {
-//         comment.editComment = false
-//       }
-//     })
-//   }
-//   )
-// }
 
 const getVisitorBlogsSuccess = (data) => {
   const showVisitorBlogsHtml = showVisitorBlogsTemplate({
@@ -69,16 +61,15 @@ const getBlogsSuccess = (data) => {
     })
   }
   )
-  console.log('data. posts are', data.posts)
   const showBlogsHtml = showBlogsTemplate({
     posts: data.posts,
     email: store.user.email
   })
-  console.log('email is', store.user.email)
   $('.visitorBlogDiv').html(showBlogsHtml)
   $(`.commentListShow`).hide()
   $('.updateForm').hide()
   $('.updateComment').val('')
+  $('.addComment').val('')
 }
 const getBlogsCreateSuccess = (data) => {
   data.posts.forEach(post => {
@@ -91,12 +82,10 @@ const getBlogsCreateSuccess = (data) => {
     })
   }
   )
-  console.log('data. posts are', data.posts)
   const showBlogsHtml = showBlogsTemplate({
     posts: data.posts,
     email: store.user.email
   })
-  console.log('email is', store.user.email)
   $('.visitorBlogDiv').html(showBlogsHtml)
   $('.updateComment').val('')
 }
@@ -151,14 +140,7 @@ const deleteCurrentUserCommentsFail = (data) => {
   console.log(data)
 }
 const showSingleBlogSuccess = data => {
-  console.log('ui success', data)
-  // const showSingleBlogsHtml = showSingleBlogTemplate({
-  //   post: data.post,
-  //   email: store.user.email
-  // })
-  console.log('email is', store.user.email)
-  // $('.visitorBlogDiv').html(showSingleBlogsHtml)
-  // $('.updateComment').val('')
+
 }
 module.exports = {
   createBlogSuccess,
